@@ -29,6 +29,21 @@
 
 ### User Stories
 
+- As a user, I want to be able to browse vintage tennis racquets and read about their history.
+- As a user, I want to be able to navigate easily around the site and find the information I need.
+- As a user, I want to be able to register easily to make purchases if I wish, with my contact and shipping details.
+- As a user, I want to be able to easily edit my personal information on my account page.
+- As a user, I want proper security and peace of mind when making online purchases.
+- As a user, I want a good user experience when browsing the website and making purchases, for a hassle free online shopping experience.
+- As a user, I want a well designed, logical shopping flow from cart through to checkout and payment.
+- As a user, I want well designed shopping pages that clearly detail taxes, surcharges and shipping costs included in the total price.
+- As a user, I want to be able to make an easy hassle free purchase with my credit card or paypal.
+- As a user, I want to be able to easily add and remove items from my shopping cart.
+- As a user, I want to be able to easily add and edit my contact, address and shipping details.
+- As a user, I want a confirmation page after I successfully make a purchase.
+- As a user, I want to be able to easily find contact information if I wish to make product enquiries.
+
+
 ### App Content
 
 ### App Style 
