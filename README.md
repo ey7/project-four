@@ -23,9 +23,24 @@
 
  ## UX and Design Planning 
 
+Please view the [project strategy document](planning.md) for the app, which details the project strategy, including the project planning of the UX and UI, scope, structure, skeleton and surface. 
+
 ### Wireframes
 
+The wireframes for the project, created with [Balsamiq](https://balsamiq.com/), can be found [here](https://github.com/ey7/project-four/tree/master/wireframes)
+
 ### Project Design Summary
+
+- The app will be a fully functional django powered online vintage tennis equipment shop. Users will have the chance to register for a seamlesss shopping experience.
+- Products will be displayed as attractive cards with interesting descriptive content on the product pages.
+- Users can add items to their cart as they browse the site.
+- The app will have a shopping cart page, where users can view the items in their cart.
+- Further shopping pages of address and shipping details will allows purchasers to enter their personal information.
+- A special payment page will handle all payments, which will be implemented in the backend by Stripe.
+- Once payment is succcessful, a payment confirmation page will appear with shop contact details.
+- The app will have full user registration, authorization and authentication functionality with hashed passwords.
+- Search functionality with a searchbox will be implemented on the products page.
+- Pagination will be implemented on the products page to limit the number of visible entries.
 
 ### User Stories
 
@@ -46,7 +61,14 @@
 
 ### App Content
 
+The app consists of over 10 pages relating to app functionality, such as home, about, account, login, register, search and custom error pages, as well as pages relating to the online shop, such as cart, address, shipping, payment and payment confirmation.
+
 ### App Style 
+
+- A primary colour with secondary colours throughout for visual consistency.
+- A modern sans serif font of Exo 2.
+- An off white background with dark grey text for optimum readability.
+- To improve the UX, I plan to use SVG icons throughout the site. In my opinion, SVG icons look crisper and are easier to work with than font icons. When placed inline they are easier to style, and they also load on the page much faster than font icons. 
 
 ## Features
 
@@ -63,6 +85,7 @@
 - [Heroku](https://heroku.com/) to host the site.
 - [Balsamiq](https://balsamiq.com/) for mock ups of the site.
 - [Postgres](https://postgresql.org) for database functionality.
+- [Stripe](https://stripe.com/) for online payment processing.
   
 ## Resources
 
