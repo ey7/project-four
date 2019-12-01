@@ -164,6 +164,7 @@
 - Forms required on all user interaction such as signing up/purchases.
 
 **Information Architecture**
+
 - Simple 10 page plus structure with sticky navabr on all pages for ease of navigation.
 - Visually attractive carousle displaying products on homepage.
 - All main elements with drop shadows and hover colour change links.

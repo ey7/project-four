@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Racquet Klub</title>
+    <!-- bootstrap css -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet"> 
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+</head>
+
+<body> 
+
+	<!-- nav  -->
+
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+      <div class="container">
+        <a href="{% url 'index' %}" class="navbar-brand font-weight-bold">Racquet Klub</a>
+          <span class="pl-3 text-light d-none d-lg-block">Vintage Tennis Racquets</span>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#dropdown">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+              <div class="collapse navbar-collapse" id="dropdown">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-light">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-light">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-light">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link text-light">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-light">Contact</a>
+                  </li>
+                </ul>
+              </div> <!-- end of navbar collapse -->
+      </div> <!-- end of container -->
+    </nav> <!-- end of nav -->
+        
+<!-- footer -->
+
+            <footer class="footer bg-primary">
+              <h2 class="footer-logo">Racquet Klub</h2>
+            </footer><!-- end of footer -->
+        
+<!-- scripts -->
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Popper JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
