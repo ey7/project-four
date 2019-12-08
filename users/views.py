@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from . forms import UsernameEmailPasswordForm, EmailUsernameUpdate 
 
 def register(request):
@@ -12,6 +13,7 @@ def register(request):
 		if form.is_valid():
 			form.save()
 			username = form.cleaned_data.get('username')
+			messages.success(request, f'You are now registered. Please log in to continue')
 			return redirect('login')
 
 	else:

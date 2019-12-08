@@ -54,9 +54,23 @@
                   </li>
                 </ul>
               </div> <!-- end of navbar collapse -->
-      </div> <!-- end of container -->
+      </div> <!-- end of nav container -->
     </nav> <!-- end of nav -->
-    {% block content%} {% endblock%}
+
+      <div class="container"> <!-- main content container -->
+        <!-- messages -->
+        <div class="text-center">
+          {% if messages %}
+            {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }} mt-3">
+                    {{ message }}
+                  </div>
+            {% endfor %}
+          {% endif %}
+         </div> <!-- end of messages div -->    
+        
+            {% block content%} {% endblock%}
+      </div> <!-- end of main content container -->
 <!-- footer -->
 
             <footer class="footer bg-primary">

@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-	<div class="container">
+	
 		<h1 class="mb-3">Log In</h1>
 			<form method="POST">
 			{% csrf_token %}
@@ -15,7 +15,7 @@
 	            </div>
 	        </form>   
 	        	<div> <p> Not a registered user?</p>
-	            		<a button class="btn btn-sm btn-primary" href="{% url 'register' %}">Register</a>
+	            		<a button class="btn btn-sm btn-primary mb-3" href="{% url 'register' %}">Register</a>
 	            </div>
-	</div>
+	
 {% endblock %}
