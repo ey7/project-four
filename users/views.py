@@ -20,7 +20,7 @@ def register(request):
 	return render(request, 'users/register.html', {'form': form})
 
 @login_required
-def profile(request):
+def account(request):
 	"""
 	Allows user to update their profile information
 	such as username and email
@@ -34,6 +34,6 @@ def profile(request):
 	else:
 		form = EmailUsernameUpdate(instance=request.user)
 
-	return render(request, 'users/profile.html', {'form': form})
+	return render(request, 'users/account.html', {'form': form})
 
 
