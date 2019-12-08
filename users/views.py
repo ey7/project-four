@@ -31,7 +31,8 @@ def account(request):
 		form = EmailUsernameUpdate(request.POST,instance=request.user)
 		if form.is_valid():
 			form.save()
-			return redirect('profile')
+			messages.success(request, f'You have now updated your account details')
+			return redirect('account')
 
 	else:
 		form = EmailUsernameUpdate(instance=request.user)
