@@ -10,8 +10,8 @@ def about(request):
 
 	return render(request, 'home/about.html')
 
-""" credit: https://stackoverflow.com/questions/46542502/django-how-to-add-a-logout-successful
--message-using-the-django-contrib-auth"""
+""" credit: https://stackoverflow.com/questions/46542502/django-
+how-to-add-a-logout-successful-message-using-the-django-contrib-auth """
 
 # show logout message when user logs out
 def show_logout_message(sender, user, request, **kwargs):
