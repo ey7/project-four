@@ -4,7 +4,7 @@
 	{%  if product_list %}
 		<ul>
 	{% for product in product_list %}
-		<li>{{product.title}} </li>
+		<li><a href="{% url 'product-detail' product.id %}">{{ product.title }}</a></li>
 		<li> {{product.description}} </li>
 		<li> Price: {{product.price}} </li>
 		<hr>
