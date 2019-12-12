@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content%} 
-	<h1 class= "text-center mb-3"> Product List </h1>
+	<h1 class= "text-center mt-3 mb-3"> Product List </h1>
 	{%  if product_list %}
 		<ul>
 	{% for product in product_list %}
-			<li> {{product.title}} </li>
-			<li> {{product.description}} </li>
-			<li> Price: {{product.price}} </li>
-			<hr>
+		<li>{{product.title}} </li>
+		<li> {{product.description}} </li>
+		<li> Price: {{product.price}} </li>
+		<hr>
 	{% endfor%}
 		</ul>
 	{% else %}
