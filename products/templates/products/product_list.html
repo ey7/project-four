@@ -6,7 +6,8 @@
 	{% for product in product_list %}
 			<li> {{product.title}} </li>
 			<li> {{product.description}} </li>
-			<li> {{product.price}} </li>
+			<li> Price: {{product.price}} </li>
+			<hr>
 	{% endfor%}
 		</ul>
 	{% else %}
