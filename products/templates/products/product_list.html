@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content%} 
-	<h1> this is the product list page</h1>
-
+	<h1 class= "text-center mb-3"> Product List </h1>
+	{%  if product_list %}
+		<ul>
+	{% for product in product_list %}
+			<li> {{product.title}} </li>
+			<li> {{product.description}} </li>
+			<li> {{product.price}} </li>
+	{% endfor%}
+		</ul>
+	{% else %}
+	<h4 class= "text-center"> There are no products to display at this time </h4>	
+	{% endif %}
 {% endblock%}
