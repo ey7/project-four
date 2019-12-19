@@ -1,5 +1,5 @@
 {% extends 'base.html' %} 
-
+{% load cloudinary %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -7,6 +7,12 @@
 		<h1 class="mb-3">Account</h1>
 			<h2 class="mb-3">Welcome {{user.username |title}}</h2>
 				<h4>If you wish, you may update your account details below</h4>
+			<h6> Upload user avatar below</h6>
+	        		<form method="POST" enctype="multipart/form-data">
+				    	{% csrf_token %}
+				    	{{ form.avatar }}
+						<input type="submit" value="Upload avatar">
+					</form>
 			<!-- form to display user information -->
 			<form method="POST">
 			{% csrf_token %}
@@ -17,5 +23,6 @@
 	                <button class="btn btn-sm btn-primary" type="submit">Update</button>
 	            </div>
 	        </form>
-	
+
+	        	
 {% endblock %}
