@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.signals import user_logged_out, user_logged_in
 from django.contrib import messages
+from django.conf import settings
+from .forms import ContactForm
 
 def index(request):
 
@@ -12,7 +14,15 @@ def about(request):
 
 def contact(request):
 
-	return render(request, 'home/contact.html')
+	contact_form = ContactForm()
+	emailjs_id = settings.EMAILJS_ID
+
+	context = {
+		"form": contact_form,
+		"emailjs_id": emailjs_id 
+	}
+
+	return render(request, 'home/contact.html', context)
 
 """ credit: https://stackoverflow.com/questions/46542502/django-
 how-to-add-a-logout-successful-message-using-the-django-contrib-auth """
