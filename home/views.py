@@ -20,7 +20,7 @@ def contact(request):
 	context = {
 		"page": contact,
 		"form": contact_form,
-		"emailjs_id": emailjs_id 
+		"emailjs_id": emailjs_id, 
 	}
 
 	return render(request, 'home/contact.html', context)

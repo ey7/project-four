@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,11 +86,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" 
     integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
  
- {% if page == "contact" %}
+
     <script type="text/javascript">
-        const emailjs = '{{EMAILJS_ID}}';
+        const emailjs = '{{emailjs_id}}';
     </script>
     <script src="{% static 'js/emailjs.js' %}"></script>
-    {% endif %}
+    
 </body>
 </html>

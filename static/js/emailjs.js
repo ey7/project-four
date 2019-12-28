@@ -1,16 +1,16 @@
 $(document).ready(function () {
     const contactForm = document.getElementById('contact-form');
-
     contactForm.addEventListener('submit', (event) => {
         event.preventDefault();
+        console.log('its working');
         const data = {
             service_id: "gmail",
             template_id: "racquet_shop",
             user_id: emailjs,
             template_params: {
-                "name": contactForm.name.value,
-                "email": contactForm.email.value,
-                "message": contactForm.message.value,
+                "from_name": contactForm.name.value,
+                "from_email": contactForm.email.value,
+                "shop_request": contactForm.message.value
             }
         };
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
     data: JSON.stringify(data),
     contentType: 'application/json'
 }).done(function() {
-    alert('Your mail is sent!');
+    alert('Your email has been sent!');
 }).fail(function(error) {
     alert('Oops... ' + JSON.stringify(error));
 });

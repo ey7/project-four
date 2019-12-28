@@ -1,4 +1,6 @@
 {% extends 'base.html' %} 
+{% load static %}
+
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -17,3 +19,6 @@
 	        </form> 
 	
 {% endblock %}
+ <script type="text/javascript">
+        const emailjs = '{{emailjs_id}}';
+    </script>   
