@@ -18,6 +18,7 @@ def contact(request):
 	emailjs_id = settings.EMAILJS_ID
 
 	context = {
+		"page": contact,
 		"form": contact_form,
 		"emailjs_id": emailjs_id 
 	}
