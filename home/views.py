@@ -10,6 +10,10 @@ def about(request):
 
 	return render(request, 'home/about.html')
 
+def contact(request):
+
+	return render(request, 'home/contact.html')
+
 """ credit: https://stackoverflow.com/questions/46542502/django-
 how-to-add-a-logout-successful-message-using-the-django-contrib-auth """
 

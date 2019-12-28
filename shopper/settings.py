@@ -153,4 +153,6 @@ LOGIN_URL = 'login'
 
 LOGOUT_REDIRECT_URL = '/'
 
+EMAILJS_ID = os.getenv('EMAILJS_ID')
+
 django_heroku.settings(locals())
