@@ -19,9 +19,9 @@ $(document).ready(function () {
     data: JSON.stringify(data),
     contentType: 'application/json'
 }).done(function() {
-    alert('Your email has been sent!');
+    eModal.alert('Your email has been sent');
 }).fail(function(error) {
-    alert('Oops... ' + JSON.stringify(error));
+    eModal.alert('Oops... ' + JSON.stringify(error));
 });
 })
 })
