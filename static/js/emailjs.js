@@ -2,7 +2,6 @@ $(document).ready(function () {
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log('its working');
         const data = {
             service_id: "gmail",
             template_id: "racquet_shop",
@@ -19,9 +18,31 @@ $(document).ready(function () {
     data: JSON.stringify(data),
     contentType: 'application/json'
 }).done(function() {
-    eModal.alert('Your email has been sent');
+    contact_success();
+    console.log('Your email has been sent');
 }).fail(function(error) {
-    eModal.alert('Oops... ' + JSON.stringify(error));
+    contact_error();
+    console.log('Oops... ' + JSON.stringify(error));
 });
-})
+});
+    function contact_success(){
+        var success = {
+        message: 'Thanks! Your email has been sent',
+        title: 'Email sent',
+        size: 'md',
+    };
+
+eModal.alert(success);
+    };
+
+    function contact_error(){
+        var error = {
+        message: 'Sorry, there was a problem. Please try again',
+        title: 'Email not sent',
+        size: 'md',
+    };
+
+eModal.alert(error);
+    };
+
 })
