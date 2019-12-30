@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-{% block content %} 
+{% block content %}
+{% load cloudinary %} 
 
   <p><strong>Title:</strong> {{ product.title }}</p>
   <p><strong>Description:</strong> {{ product.description }}</p> 
   <p><strong>Price:</strong> {{ product.price }}</p> 
-  <img src="{{product.image}}" alt="{{product.title}}">  
+  <img src="{{product.image.url}}" alt="{{product.title}}">  
 
 {% endblock%}
