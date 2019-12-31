@@ -8,4 +8,16 @@
   <p><strong>Price:</strong> {{ product.price }}</p> 
   <img src="{{product.image.url}}" alt="{{product.title}}">  
 
+<!-- test submit form to see if the item can be added to cart -->
+	<form method="post" action="{% url 'add-to-cart' product.id %}">
+      {% csrf_token %}
+        <div class="input-group">
+            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+            <span class="input-group-btn">
+                <button class="btn btn-success" type="submit">Add</button>
+            </span>
+        </div>
+    </form>
+  
+
 {% endblock%}

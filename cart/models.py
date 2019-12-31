@@ -15,7 +15,7 @@ class Order(models.Model):
 	country = models.CharField(max_length=50)
 	postcode = models.CharField(max_length=10, blank=True)
 	date = models.DateField(default=datetime.date.today)
-	customer = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
+	
 
 	def __str__(self):
 		return f'{self.id}-{self.date}-{self.full_name}'
@@ -24,7 +24,7 @@ class OrderLineItem(models.Model):
 	"""
 	Model to store line items, order, product and quantity
 	"""
-	order = models.ForeignKey(Order, on_delete=models.CASCADE)
+	customer = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
 	product = models.ForeignKey(Product, on_delete=models.PROTECT)
 	quantity = models.PositiveIntegerField()
 
