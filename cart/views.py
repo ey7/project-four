@@ -26,7 +26,7 @@ def add_to_cart(request, product_id):
 		existing_item_in_cart += 1
 		existing_item_in_cart.save()
 
-		return redirect(reverse('all-products'))
+		return render(request, 'cart/cart_view.html')
 
 
 
