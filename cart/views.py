@@ -11,7 +11,7 @@ def cart_view(request):
 
 def add_to_cart(request, product_id):
 	# assign product variable
-	product = Product.objects.get(pk=product_id)
+	product = Product.objects.get(product_id)
 	# determine if the product already exists in users cart
 	existing_item_in_cart = OrderLineItem.objects.filter(customer=request.user, product=product).first()
 	# if item is not there, create a new one
