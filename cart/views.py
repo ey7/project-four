@@ -19,12 +19,13 @@ def add_to_cart(request, product_id):
 		new_item_in_cart = OrderLineItem()
 		new_item_in_cart.product = product
 		new_item_in_cart.customer = request.user
-		new_item_in_cart.quantity = int(1)
+		new_item_in_cart.quantity = 1
 		new_item_in_cart.save()
 	else:
 		# increase total in cart
-		existing_item_in_cart += int(1)
-		existing_item_in_cart.save()
+		existing_cart_item = int(existing_item_in_cart)
+		existing_cart_item += 1
+		existing_cart_item.save()
 
 		return render(request, 'cart/cart_view.html')
 
