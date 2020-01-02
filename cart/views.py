@@ -1,33 +1,25 @@
 from django.shortcuts import render, redirect, reverse
-from . models import OrderLineItem
-from products.models import Product
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def cart_view(request):
-	cart_items = OrderLineItem.objects.filter(customer=request.user)
 
-	return render(request, 'cart/cart_view.html',{
-		'cart_items':cart_items
-		} ) 
+	return render(request, 'cart/cart_view.html')
 
-def add_to_cart(request, product_id):
-	# assign product variable
-	product = Product.objects.get(pk=product_id)
-	# determine if the product already exists in users cart
-	existing_item_in_cart = OrderLineItem.objects.filter(customer=request.user, product=product).first()
-	# if item is not there, create a new one
-	if existing_item_in_cart == None:
-		new_item_in_cart = OrderLineItem()
-		new_item_in_cart.product = product
-		new_item_in_cart.customer = request.user
-		new_item_in_cart.quantity = 1
-		new_item_in_cart.save()
+@login_required
+def add_to_cart(request, id):
+	# add a quantity of product to the cart
+	quantity = int(request.POST.get('quantity'))
+
+	cart = request.session.get('cart', {})
+	if id in cart:
+		cart[id] = int(cart[id]) + quantity
 	else:
-		# increase total in cart
-		existing_cart_item = int(existing_item_in_cart)
-		existing_cart_item += 1
-		existing_cart_item.save()
+		cart[id] = cart.get(id, quantity)
 
-		return render(request, 'cart/cart_view.html')
+		request.session['cart'] = cart
+		return redirect(reverse('all-products'))
+
 
 
 
