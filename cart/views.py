@@ -2,9 +2,13 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 
 @login_required
-def cart_view(request):
+def cart_view(request, id , quantity):
+	if quantity in cart:
+		cart[quantity] = int(cart[quantity])
+	else:
+		cart[quantity] = cart.get(quantity, id)
 
-	return render(request, 'cart/cart_view.html')
+	return render(request, 'cart/cart_view.html',{'quantity':quantity,})
 
 @login_required
 def add_to_cart(request, id):
