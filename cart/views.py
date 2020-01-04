@@ -32,5 +32,5 @@ def remove_from_cart(request, id):
 			cart.pop(item_remove)
 			request.session['cart'] = cart
 
-			return redirect(reverse('cart_view'))
+			return redirect(reverse('cart'))
 
