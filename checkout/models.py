@@ -1,3 +1,34 @@
 from django.db import models
+from products.models import Product
+import datetime
+from django.contrib.auth.models import User
 
-# Create your models here.
+class Order(models.Model):
+	"""
+	Model to store order information
+	"""
+	full_name = models.CharField(max_length=50)
+	phone_number = models.CharField(max_length=20)
+	street_address_1 = models.CharField(max_length=50)
+	street_address_2 = models.CharField(max_length=50)
+	town_or_city = models.CharField(max_length=50)
+	county = models.CharField(max_length=50)
+	country = models.CharField(max_length=50)
+	postcode = models.CharField(max_length=10, blank=True)
+	date = models.DateField(default=datetime.date.today)
+	
+	def __str__(self):
+		return f'{self.id}-{self.date}-{self.full_name}'
+
+class OrderLineItem(models.Model):
+	"""
+	Model to store line items, order, product and quantity
+	"""
+	order = models.ForeignKey(Order, on_delete=models.PROTECT)
+	product = models.ForeignKey(Product, on_delete=models.PROTECT)
+	quantity = models.PositiveIntegerField()
+
+	def __str__(self):
+		return f'{self.quantity}-{self.product.title}-{self.product.price}'
+
+
