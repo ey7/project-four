@@ -20,6 +20,17 @@ def add_to_cart(request, id):
 		request.session['cart'] = cart
 		return render(request,'cart/cart_view.html')
 
+@login_required
+def remove_from_cart(request, id):
+	# remove an item from the cart
 
+	if request.method == 'POST':
+		item_remove = request.POST.get('id')
+		cart = request.session.get('cart', {})
 
+		if cart[item_remove] > 0:
+			cart.pop(item_remove)
+			request.session['cart'] = cart
+
+			return redirect(reverse('cart_view'))
 
