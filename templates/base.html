@@ -13,6 +13,7 @@
      <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet"> 
     <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+    {% block head_js %}{% endblock %}
 </head>
 
 <body> 
@@ -87,10 +88,7 @@
     integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
     <script src="//cdn.rawgit.com/saribe/eModal/1.2.67/dist/eModal.min.js"></script>
 
-    <script type="text/javascript">
-        const emailjs = '{{emailjs_id}}';
-    </script>
-    <script src="{% static 'js/emailjs.js' %}"></script>
+    {% block js %}{% endblock %}
     
 </body>
 </html>
