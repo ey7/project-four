@@ -11,15 +11,9 @@
 <!-- form to remove an item from the cart -->
 	<form method="post" action="{% url 'remove-from-cart' item.id %}">
       {% csrf_token %}
-       <div class="form-group">
-        	<label for="exampleInputAmount" class="sr-only">New Qty</label>
-        		<div class="input-group">
-            		<div class="input-group-addon">Qty</div>
-            			<input name="quantity" type="number" min="0" max="999" class="form-control">
-            				<div class="input-group-addon">{{item.quantity}}</div>
-        		</div>
-       </div>	
-       		<a href="#" onclick="$(this).closest('form').submit()">Remove from cart</a>
+       <input type="hidden" name="quantity" value="1">
+       <input type="hidden" name="id" value ="{{item.id}}">
+       <a href="#" onclick="$(this).closest('form').submit()">Remove from cart</a>
     </form>
 
 {% endfor %}
