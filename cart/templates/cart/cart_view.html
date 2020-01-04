@@ -9,10 +9,10 @@
 <p>{{ item.product.price }}</p>
 
 <!-- form to remove an item from the cart -->
-	<form method="post" action="{% url 'remove-from-cart' product.id %}">
+	<form method="post" action="{% url 'remove-from-cart' item.id %}">
       {% csrf_token %}
        <input type="hidden" name="quantity" value="1">
-       <input type="hidden" name="id" value ="{{item.product.id}}">
+       <input type="hidden" name="id" value ="{{item.id}}">
        <a href="#" onclick="$(this).closest('form').submit()">Remove from cart</a>
     </form>
 
