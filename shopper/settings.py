@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'users',
     'products',
     'cart',
+    'search',
     'checkout',
     'crispy_forms',
     'cloudinary',
