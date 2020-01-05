@@ -17,12 +17,13 @@
 	                <button class="btn btn-sm btn-primary" type="submit">Send</button>
 	            </div>
 	        </form> 
-	        
+
 	        {% block js %}
 	        <script type="text/javascript">
         	const emailjs = '{{emailjs_id}}';
     		</script>
     		<script src="{% static 'js/emailjs.js' %}"></script>
 	        {% endblock%}
+	        
 {% endblock %}
  
