@@ -159,4 +159,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 EMAILJS_ID = os.getenv('EMAILJS_ID')
 
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
 django_heroku.settings(locals())
