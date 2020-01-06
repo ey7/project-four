@@ -4,11 +4,27 @@
 
 
 <div>
-    <form action="{% url 'search-results' %}" method="get">
-        <input type="text" title="q">
-        <button type="search">Search</button>
-    </form>
+    <form action="{% url 'search-results' %}" method="GET" value="{{request.GET.q}}">
+		<input type="text" name="q" value="{{request.GET.q}}" placeholder="Search products"/>
+		<input type="submit" name="submit" value="Search"/>
+	</form>
 </div>
+
+
+{% if results %}
+<p>Results for {{ request.GET.q }}</p>
+
+{% for result in results %}
+
+{{result.title}}
+<br/>
+
+{{result.description}}
+<br/>
+
+{% endfor %}
+
+{% endif %}
 
 
 {% endblock%}
