@@ -3,11 +3,12 @@
 	<h1>Search</h1>
 
 
-<div class="display">
-            <form action="{% url 'search-results' %}" method="get">
-                <input type="text" name="q">
-                <button type="search">Search</button>
-            </form>
-        </div>
+<div>
+    <form action="{% url 'search-results' %}" method="get">
+        <input type="text" title="q">
+        <button type="search">Search</button>
+    </form>
+</div>
+
 
 {% endblock%}
