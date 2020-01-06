@@ -9,22 +9,22 @@
 	</form>
 </div>
 
-	{% if results_count == 0 %}
-	<h2> Sorry, no results found for "{{ request.GET.q }}" </h2>
-	
-
-	{% elif results_count == 1 %}
+	{% if results_count == 1 %}
 	<h2 class="pb-3">Your search for "
                 <span>{{ request.GET.q }}</span>" yielded 
                 <span>1</span> result
     </h2>
 	
-	{% else %}
+	{% elif results_count > 1 %}
 	<h2 class="pb-3">Your search for "
                 <span>{{ request.GET.q  }}</span>" yielded 
                 <span>{{ results_count }}</span> results
     </h2>
+
+    {% else %}
+	<h2> Sorry, no results found for "{{ request.GET.q }}" </h2>
 	{% endif %}
+	
 	{% if results %}
 	{% for result in results %}
 
