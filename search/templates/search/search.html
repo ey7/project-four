@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-{% block content%} 
+{% block content %} 
 	<h1>Search</h1>
-
 
 <div>
     <form action="{% url 'search-results' %}" method="GET" value="{{request.GET.q}}">
@@ -10,21 +9,33 @@
 	</form>
 </div>
 
+	{% if results_count == 0 %}
+	<h2> Sorry, no results found for "{{ request.GET.q }}" </h2>
+	
 
-{% if results %}
-<p>Results for {{ request.GET.q }}</p>
+	{% elif results_count == 1 %}
+	<h2 class="pb-3">Your search for "
+                <span>{{ request.GET.q }}</span>" yielded 
+                <span>1</span> result
+    </h2>
+	
+	{% else %}
+	<h2 class="pb-3">Your search for "
+                <span>{{ request.GET.q  }}</span>" yielded 
+                <span>{{ results_count }}</span> results
+    </h2>
+	{% endif %}
+	{% if results %}
+	{% for result in results %}
 
-{% for result in results %}
+	{{result.title}}
+	<br/>
 
-{{result.title}}
-<br/>
+	{{result.description}}
+	<br/>
 
-{{result.description}}
-<br/>
+	{% endfor %}
 
-{% endfor %}
-
-{% endif %}
-
+	{% endif %}
 
 {% endblock%}

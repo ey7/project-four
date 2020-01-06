@@ -17,7 +17,10 @@ def search_results(request):
 			lookups = Q(title__icontains=query) | Q(description__icontains=query)
 
 			results = Product.objects.filter(lookups).distinct()
+			results_count = Product.objects.filter(lookups).distinct().count()
 
-			return render(request, "search/search.html", {"results": results})
+			return render(request, "search/search.html",
+				{"results": results, "results_count": results_count})
 		else:
-			return render(request, "search/search.html")
+			return render(request, "search/search.html",
+				{"results": results, "results_count": results_count})
