@@ -32,7 +32,7 @@
 	{% if results %}
 	{% for result in results %}
 	
-	<li class="list-group-item"><a class="text-dark" href="{% url 'products:product-detail' product.id=result.id %}">{{ result.title }}</a>
+	<li class="list-group-item"><a class="text-dark" href="{% url 'products:product-detail' product.id %}">{{ result.title }}</a>
 	</li>
 
 	{% endfor %}
