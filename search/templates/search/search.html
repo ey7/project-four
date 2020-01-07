@@ -31,12 +31,9 @@
 
 	{% if results %}
 	{% for result in results %}
-
-	{{result.title}}
-	<br/>
-
-	{{result.description}}
-	<br/>
+	
+	<li class="list-group-item"><a class="text-dark" href="{% url 'product-detail' product.id %}">{{ result.title }}</a>
+	</li>
 
 	{% endfor %}
 
