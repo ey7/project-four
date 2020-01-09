@@ -6,7 +6,7 @@
 	{%  if product_list %}
 		<ul>
 	{% for product in product_list %}
-		<li><a href="{% url 'products:product-detail' result.slug %}">{{ product.title }}</a></li>
+		<li><a href="{% product.get_absolute_url %}">{{ product.title }}</a></li>
 		<li> {% cloudinary product.image.url width=100 height=100 %} </li>
 		<li> {{product.description}} </li>
 		<li> Price: {{product.price}} </li>
