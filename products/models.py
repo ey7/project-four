@@ -6,9 +6,10 @@ class Product(models.Model):
 	description = models.TextField()
 	price = models.DecimalField(max_digits=6, decimal_places=2)
 	image = models.ImageField(upload_to='images')
+	slug = models.SlugField(null=True)
 
 	def __str__(self):
 		return self.title
 
 	def get_absolute_url(self):
-		return reverse('product-detail', args=[str(self.id)])
+		return reverse('product-detail', kwargs={'slug': self.slug})
