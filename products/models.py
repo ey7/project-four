@@ -1,18 +1,15 @@
 from django.db import models
 from django.urls import reverse
 
-category_groups = (
-
-	('graphite', 'Graphite'),
-	('modern', 'Modern'),
-	('metal', 'Metal'),
-	('oversize', 'Oversize'),
-	('modern', 'Modern'),
-	
-)
-
 class Category(models.Model):
-	name = models.CharField(max_length=100, choices=category_groups)
+	CATEGORY_GROUPS = (
+		('graphite', 'Graphite'),
+		('modern', 'Modern'),
+		('metal', 'Metal'),
+		('oversize', 'Oversize'),
+		('modern', 'Modern'),
+	)
+	name = models.CharField(max_length=100, choices=CATEGORY_GROUPS)
 	slug = models.SlugField(null=True)
 
 	class Meta:
