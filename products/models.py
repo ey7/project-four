@@ -12,7 +12,7 @@ category_groups = (
 )
 
 class Category(models.Model):
-	name = models.CharField(max_length=100, choices=category_groups, default='Graphite')
+	name = models.CharField(max_length=100, choices=category_groups)
 	slug = models.SlugField(null=True)
 
 	class Meta:
