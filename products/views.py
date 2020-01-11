@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . models import Product
 from django.views.generic import DetailView, ListView
 
@@ -9,7 +9,10 @@ class ProductListView(ListView):
 class ProductDetailView(DetailView):
 	model = Product
 
-def product_category(request, category):
-	products = Product.objects.filter(category=category)
+class CategoryProductListView(ListView):
+    model = Product
+    template_name = 'products/product_list.html'
 
-	return render(request, "products/product_list.html", {'products': products}) 
+    def get_queryset(self):
+       category = get_object_or_404(Category, slug=self.kwargs['slug'])
+       return super(CategoryProductListView, self).get_queryset().filter(category=category)
