@@ -3,11 +3,11 @@ from django.urls import reverse
 
 category_groups = (
 
-	('Graphite', 'Graphite'),
-	('Modern', 'Modern'),
-	('Metal', 'Metal'),
-	('Oversize', 'Oversize'),
-	('Modern', 'Modern'),
+	('graphite', 'Graphite'),
+	('modern', 'Modern'),
+	('metal', 'Metal'),
+	('oversize', 'Oversize'),
+	('modern', 'Modern'),
 	
 )
 
