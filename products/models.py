@@ -11,8 +11,20 @@ category_groups = (
 	
 )
 
+class Category(models.Model):
+	name = models.CharField(max_length=100, choices=category_groups, default='Graphite')
+	slug = models.SlugField(null=True)
+
+	class Meta:
+		ordering = ('name',)
+		verbose_name = 'category'
+		verbose_name_plural = 'categories'
+
+		def __str__(self):
+			return self.name
+
 class Product(models.Model):
-	category = models.CharField(max_length=50, choices=category_groups, default='Graphite')
+	category = models.ForeignKey(Category, on_delete=models.PROTECT)
 	title = models.CharField(max_length=100)
 	description = models.TextField()
 	price = models.DecimalField(max_digits=6, decimal_places=2)
