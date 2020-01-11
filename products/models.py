@@ -15,13 +15,19 @@ class Category(models.Model):
 			return self.name
 
 class Product(models.Model):
-	CATEGORY_GROUPS = (
-		('graphite', 'Graphite'),
-		('modern', 'Modern'),
-		('metal', 'Metal'),
-		('oversize', 'Oversize'),
-		('modern', 'Modern'),
-	)
+	GRAPHITE = 'Graphite'
+	MODERN = 'Modern'
+	METAL = 'Metal'
+	OVERSIZE = 'Oversize'
+	WOOD = 'Wood'
+
+	CATEGORY_GROUPS = [
+		(GRAPHITE, 'Graphite'),
+		(MODERN, 'Modern'),
+		(METAL, 'Metal'),
+		(OVERSIZE, 'Oversize'),
+		(WOOD, 'Wood'),
+	]
 	category = models.ForeignKey(Category, on_delete=models.PROTECT, choices=CATEGORY_GROUPS)
 	title = models.CharField(max_length=100)
 	description = models.TextField()
