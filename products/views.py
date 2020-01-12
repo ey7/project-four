@@ -15,4 +15,4 @@ class CategoryProductListView(ListView):
 
     def get_queryset(self):
        category = get_object_or_404(Category, slug=self.kwargs['slug'])
-       return super(CategoryProductListView, self).get_queryset().filter(category=category)
+       return super(CategoryProductListView, self).get_queryset().filter(category_id=category)
