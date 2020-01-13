@@ -14,5 +14,7 @@ class CategoryProductListView(ListView):
     template_name = 'products/product_list.html'
 
     def get_queryset(self):
-       category = get_object_or_404(Category, slug=self.kwargs['slug'])
-       return super(CategoryProductListView, self).get_queryset().filter(category=category_id)
+       category = get_object_or_404(Product, slug=self.kwargs['slug'])
+       return super(CategoryProductListView, self).get_queryset().filter(category_id=category)
+    
+
