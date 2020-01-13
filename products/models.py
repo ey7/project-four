@@ -23,8 +23,8 @@ class Category(models.Model):
 		verbose_name = 'category'
 		verbose_name_plural = 'categories'
 
-		def __str__(self):
-			return self.name
+	def __str__(self):
+			return f'{self.name}'
 
 class Product(models.Model):
 	
@@ -36,7 +36,7 @@ class Product(models.Model):
 	slug = models.SlugField(null=False, unique=True)
 
 	def __str__(self):
-		return self.title
+		return f'{self.title}'
 
 	def get_absolute_url(self):
 		return reverse('products:product-detail', kwargs={'slug': self.slug})
