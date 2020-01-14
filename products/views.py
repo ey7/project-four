@@ -9,6 +9,8 @@ class ProductListView(ListView):
 class ProductDetailView(DetailView):
 	model = Product
 
-class CategoryDetailView(DetailView):
-	model = Product
+def product_category(request, category):
+    products = Product.objects.filter(category=category)
+
+    return render(request, "products/product_list.html", {"products": products})
 
