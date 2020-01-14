@@ -3,7 +3,7 @@
 {% load cloudinary %} 
 
 	<h1 class= "text-center mt-3 mb-3"> Product List </h1>
-	<a href="{% url 'products:category-detail' slug='category_id=3' %}">Vintage Graphite racquets</a>
+	<a href="{% url 'products:category-detail' slug='category=graphite' %}">Vintage Graphite racquets</a>
 	{%  if product_list %}
 		<ul>
 	{% for product in product_list %}
