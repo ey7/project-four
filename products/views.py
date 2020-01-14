@@ -9,10 +9,12 @@ class ProductListView(ListView):
 class ProductDetailView(DetailView):
 	model = Product
 
-class CategoryListView(DetailView):
+class CategoryListView(ListView):
 	model = Product
 	template_name = 'products/categories.html'
-	queryset = Product.objects.filter(category='Graphite')
+
+	def get_queryset(self):
+		return Product.objects.filter(category='Graphite')
 
 
 

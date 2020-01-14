@@ -2,7 +2,8 @@
 
 {% block content %}
 <div class="row">
-    {% for product in product_list %}
+    {% if object_list %}
+    {% for object in object_list %}
         <div>
             <div>
                 <div>{{product.image.url}}</div>
@@ -15,5 +16,8 @@
             </div>
         </div>
     {% endfor %}
+    {% else %}
+    <p> there is nothing to display</p>
+    {% endif %}
 </div>
 {% endblock %}
