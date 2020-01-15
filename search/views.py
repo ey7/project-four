@@ -2,7 +2,11 @@ from django.shortcuts import render
 from products.models import Product
 from django.db.models import Q
 
-# Create your views here.
+# category view
+def product_category(request, category):
+    products = Product.objects.filter(category=category)
+
+    return render(request, "search/categories.html", {"products": products})
 
 def search(request):
 	return render(request, 'search/search.html')
