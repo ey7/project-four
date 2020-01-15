@@ -7,8 +7,8 @@
     {% for product in products %}
         
         <ul>
-            <li class="list-group-item">{% cloudinary product.image.url height=150 width=150  %}</li>  
             <li class="list-group-item"><a href="{{product.get_absolute_url}}">{{ product.title }}</a></li>
+            <li class="list-group-item">{% cloudinary product.image.url height=200 width=200  %}</li>  
             <li class="list-group-item">€{{ product.price }}</li>   
         </ul>
        
