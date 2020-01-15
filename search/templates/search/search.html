@@ -31,10 +31,11 @@
 
 	{% if results %}
 	{% for result in results %}
-	
-	<li class="list-group-item"><a class="text-dark" href="{% url 'products:product-detail' result.slug %}">{{ result.title }}</a>
-	</li>
-
+	<ul>
+		<li class="list-group-item"><a class="text-dark" href="{% url 'products:product-detail' result.slug %}">{{ result.title }}</a>
+		</li>
+		<li class="list-group-item text-dark">{{ result.description }}</li>
+	</ul>
 	{% endfor %}
 
 	{% endif %}
