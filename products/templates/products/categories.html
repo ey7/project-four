@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% load cloudinary %}
 
 <div class="row">
     {% if products %}
     {% for product in products %}
-       <ul>             
-            <li>{% cloudinary product.image.url width=100 height=100 %}</li>
+        
+        <ul>
             <li><a href="{{product.get_absolute_url}}">{{ product.title }}</a></li>
             <li>{{ product.description }}</li>
-            <li>Price: €{{ product.price }}</li>
-        </ul>      
+            <li>€{{ product.price }}</li>   
+        </ul>
+       
     {% endfor %}
     {% else %}
-    <p> Sorry, Nothing to display</p>
+    <p> Sorry, nothing to display</p>
     {% endif %}
 </div>
 {% endblock %}
