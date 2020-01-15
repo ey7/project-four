@@ -1,23 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="row">
     {% if products %}
     {% for product in products %}
-        <div>
-            <div>
-                <div>{{product.image.url}}</div>
-
-                <h3>{{ product.title }}</h3>
-                <p>{{ product.description }}</p>
-                <p>€{{ product.price }}</p>
-
-                <a href="{{product.get_absolute_url}}">view</a>
-            </div>
-        </div>
+        
+        <ul>
+            <li><a href="{{product.get_absolute_url}}">{{ product.title }}</a></li>
+            <li>{{ product.description }}</li>
+            <li>€{{ product.price }}</li>   
+        </ul>
+       
     {% endfor %}
     {% else %}
-    <p> there is nothing to display</p>
+    <p> Sorry, nothing to display</p>
     {% endif %}
 </div>
 {% endblock %}
