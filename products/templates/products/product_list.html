@@ -2,13 +2,14 @@
 {% block content %}
 {% load cloudinary %} 
 
-	<h1 class= "text-center mt-3 mb-3"> Product List </h1>
+	
 	<a href="{% url 'category-detail' category='Graphite' %}">Graphite</a>
 	<a href="{% url 'category-detail' category='Wood' %}">Wood</a>
 	{%  if product_list %}
-		<ul>
 	{% for product in product_list %}
-			<li class="list-group-item"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></li>
+		<ul>
+			<li class="list-group-item"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+			</li>
 			<li class="list-group-item"> {% cloudinary product.image.url width=200 height=200 %} </li>
 			<li class="list-group-item"> €{{product.price}} </li>
 		</ul>
