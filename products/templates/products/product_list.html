@@ -2,19 +2,6 @@
 {% block content %}
 {% load cloudinary %} 
 
-	<!-- Racquet category dropdown button  -->
-	<div class="btn-group mt-2">
-	  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Racquet Categories
-	  </button>
-  		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="{% url 'category-detail' category='Modern' %}">Modern</a>
-		    <a class="dropdown-item" href="{% url 'category-detail' category='Graphite' %}">Graphite</a>
-		    <a class="dropdown-item" href="{% url 'category-detail' category='Oversize' %}">Oversize</a>
-		    <a class="dropdown-item" href="{% url 'category-detail' category='Metal' %}">Metal/Hybrid</a>
-		    <a class="dropdown-item" href="{% url 'category-detail' category='Wood' %}">Wood</a>
-  		</div>
-	</div>
 	{%  if product_list %}
 	{% for product in product_list %}
 		<ul>
