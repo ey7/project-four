@@ -2,9 +2,9 @@
 {% block content %}
 
 		<div class="row">
-      {%  if product_list %}
-      {% for product in product_list %}
       <div class="col-sm-6 col-lg-4 my-3">
+        {%  if product_list %}
+        {% for product in product_list %}
         <div class="card">
           <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
             <!-- image overlay text -->
@@ -22,15 +22,15 @@
 	{% if is_paginated %}
 
       {% if page_obj.has_previous %}
-        <a class="btn btn-outline-info btn-sm mb-4" href="?page=1">First</a>
-        <a class="btn btn-outline-info btn-sm mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        <a class="btn btn-outline-warning btn-sm mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-warning btn-sm mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
       {% endif %}
 
       {% for num in page_obj.paginator.page_range %}
         {% if page_obj.number == num %}
-          <a class="btn btn-info btn-sm mb-4" href="?page={{ num }}">{{ num }}</a>
+          <a class="btn btn-warning btn-sm mb-4" href="?page={{ num }}">{{ num }}</a>
         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-          <a class="btn btn-outline-info btn-sm mb-4" href="?page={{ num }}">{{ num }}</a>
+          <a class="btn btn-outline-warning btn-sm mb-4" href="?page={{ num }}">{{ num }}</a>
         {% endif %}
       {% endfor %}
 
