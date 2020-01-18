@@ -48,6 +48,12 @@ h2 {
     padding-bottom: 3px; 
 }
 
+.cart-button {
+    bottom: 0;
+    right: 0;
+    padding-right: 3px;
+}
+
 /* footer styling */
 .footer {
     background-color: #a9a9a9;
