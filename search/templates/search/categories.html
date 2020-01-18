@@ -10,7 +10,9 @@
                 <div class="card-img-overlay">
                     <a href="{{ product.get_absolute_url }}" aria-label="view product">
                         <h6 class="card-title">{{ product.title }}</h6>
-                    </a>   
+                    </a>
+                    <p class="card-text">€{{product.price}}</p>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Add to cart</a>    
                 </div>
             </div> <!-- end card -->
           </div> <!-- end col -->
