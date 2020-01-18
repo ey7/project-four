@@ -1,0 +1,86 @@
+*,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* give body postion relative so that the footer can be absolute */
+body {
+    text-decoration: none;
+  	font-family: 'Exo 2', sans-serif;
+    background-color: #f8f8ff;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    position: relative;
+    padding-bottom: 70px;
+    min-height: 100%;
+}
+ /* default h1 font size for smaller screens */
+h1 {
+    font-size: 1.8rem;
+}
+/* default h2 font size for smaller screens */
+h2 {
+    font-size: 1.1rem;
+}
+
+/* footer styling */
+.footer {
+    background-color: #a9a9a9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 70px;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* ------------------ general media queries ------------------- */
+
+/* medium screens and up */
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 1.05rem;
+  }
+    h1 {
+        font-size: 2rem;
+  }
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* large screens and up */
+@media screen and (min-width: 992px) {
+    html {
+      font-size: 1.1rem;
+  }
+    h1 {
+      font-size: 2.2rem;
+  }
+    h2 {
+      font-size: 1.3rem;
+    }
+}
+
+/*  extra large screens and up */
+@media screen and (min-width: 1200px) {
+    html {
+      font-size: 1.2rem;
+  }
+    h1 {
+      font-size: 2.5rem;
+  }
+    h2 {
+      font-size: 1.4rem;
+    }
+}
