@@ -2,7 +2,6 @@
 {% block content%} 
 {% load static %}
 	<!-- slider -->
-
             <div id="superCarousel" class="carousel slide carousel-fade" data-ride="carousel">
               <ol class="carousel-indicators">
                   <li data-target="#superCarousel" data-slide-to="0" class="active"></li>
@@ -11,21 +10,21 @@
               </ol>
                   <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                          <img src="{% static 'img/rafter.jpg' %}" alt="Vintage Tennis Racquet 1" class="d-block w-100">
+                          <img src="{% static 'img/zebra_index.jpg' %}" alt="Volkyl Zebra Hybrid" class="d-block w-100">
                           <div class="carousel-caption">
-                          <p><a class="btn btn-md btn-primary carousel-btn-info" href="hair.html" role="button">Racquet1</a></p>
+                          <p><a class="btn btn-sm btn-primary carousel-btn-info" href="https://racquet-shop.herokuapp.com/products/volkl-zebra/" role="button">Volkyl Zebra</a></p>
                           </div>
                     </div>
                     <div class="carousel-item">
-                          <img src="{% static 'img/sampras.jpg' %}" alt="Vintage Tennis Racquet 2" class="d-block w-100">
+                          <img src="{% static 'img/maxply_index.jpg' %}" alt="Dunlop Maxply Wood Racquet" class="d-block w-100">
                           <div class="carousel-caption">
-                          <p><a class="btn btn-md btn-primary carousel-btn-info" href="food.html" role="button">Racquet2</a></p>
+                          <p><a class="btn btn-sm btn-primary carousel-btn-info" href="#" role="button">Dunlop Maxply</a></p>
                           </div>
                     </div>
                     <div class="carousel-item">
-                          <img src="{% static 'img/lendl.jpg' %}" alt="Vintage Tennis Racquet 3" class="d-block w-100">
+                          <img src="{% static 'img/federer_index.jpg' %}" alt="Federer Modern Racquet" class="d-block w-100">
                           <div class="carousel-caption">
-                          <p><a class="btn btn-md btn-primary carousel-btn-info" href="beauty.html" role="button">Racquet3</a></p>
+                          <p><a class="btn btn-sm btn-primary carousel-btn-info" href="https://racquet-shop.herokuapp.com/products/roger-federer-n-six-one-tour-90/" role="button">Wilson N-Six-One</a></p>
                           </div>
                     </div>
                         <a href="#superCarousel" role="button" data-slide="prev" class="carousel-control-prev">
@@ -39,10 +38,13 @@
                   </div> <!-- end of carousel-inner -->
             </div> <!-- end of super-carousel -->
 
-<!--    about    -->
-
-        <aside class="about">
-          <p>Welcome to Racquets, the vintage tennis racquet shop. Please browse our products</p>   
+        <!--    about    -->
+        <aside class="about mt-2 text-center">
+          <p>Welcome to Racquets, the vintage tennis racquet shop</p>
+          <p class="text-center">
+            <a class="btn btn-sm btn-warning mt-2 mr-2" aria-label="about us" href="{% url 'about' %}">About</a>
+            <a class="btn btn-sm btn-warning mt-2" aria-label="products" href="{% url 'products:all-products' %}">Products</a>
+          </p>   
         </aside>
 
 {% endblock %}

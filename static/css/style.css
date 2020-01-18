@@ -70,6 +70,9 @@ h2 {
     h2 {
       font-size: 1.3rem;
     }
+    .carousel-item {
+    height: 85vh;
+    }
 }
 
 /*  extra large screens and up */
