@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load cloudinary %} 
 
 	{%  if product_list %}
 	{% for product in product_list %}
 		<div class="row">
       <div class="col-sm-6 col-lg-4 my-3">
         <div class="card">
-          <div class="img-fluid card-image">{% cloudinary product.image.url width=200 height=200 %}</div>
+          <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
             <!-- image overlay text -->
             <div class="card-img-overlay">
                 <a href="{{ product.get_absolute_url }}" aria-label="view product">
@@ -17,7 +16,7 @@
         </div> <!-- end card -->
       </div> <!-- end col -->
     </div> <!-- end row -->
-    
+
 	{% endfor%}
 	<!-- pagination code credit: Corey Shafer https://www.youtube.com/watch?v=acOktTcTVEQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=11 -->
 	{% if is_paginated %}
