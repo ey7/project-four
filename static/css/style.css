@@ -51,7 +51,7 @@ h2 {
 .cart-button {
     bottom: 0;
     right: 0;
-    padding-right: 3px;
+    position: absolute;
 }
 
 /* footer styling */
