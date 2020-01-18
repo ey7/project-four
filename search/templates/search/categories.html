@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
-
 {% block content %}
-{% load cloudinary %} 
-<div class="row">
-    {% if products %}
-    {% for product in products %}
+    {% if products %} 
+        <div class="row">
+          {% for product in products %}
+          <div class="col-sm-6 col-lg-4 my-3">
+            <div class="card">
+              <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
+                <!-- image overlay text -->
+                <div class="card-img-overlay">
+                    <a href="{{ product.get_absolute_url }}" aria-label="view product">
+                        <h6 class="card-title">{{ product.title }}</h6>
+                    </a>   
+                </div>
+            </div> <!-- end card -->
+          </div> <!-- end col -->
+          {% endfor %}
+        </div> <!-- end row -->
         
-        <ul>
-            <li class="list-group-item"><a href="{{product.get_absolute_url}}">{{ product.title }}</a></li>
-            <li class="list-group-item">{% cloudinary product.image.url height=200 width=200  %}</li>  
-            <li class="list-group-item">€{{ product.price }}</li>   
-        </ul>
-       
-    {% endfor %}
-    {% else %}
-    <p> Sorry, nothing to display</p>
+        {% else %}
+        <p> Sorry, nothing to display</p>
     {% endif %}
-</div>
+
 {% endblock %}

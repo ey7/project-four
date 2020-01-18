@@ -5,9 +5,7 @@
       {% for product in product_list %}
       <div class="col-sm-6 col-lg-4 my-3">
         <div class="card">
-          <a href="{{ product.get_absolute_url }}" aria-label="view product">
-            <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
-          </a>  
+          <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
             <!-- image overlay text -->
             <div class="card-img-overlay">
                 <a href="{{ product.get_absolute_url }}" aria-label="view product">
