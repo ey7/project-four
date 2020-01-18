@@ -4,12 +4,27 @@
 
 	{%  if product_list %}
 	{% for product in product_list %}
-		<ul>
+		<div class="row">
+      <div class="col-sm-6 col-lg-4 my-3">
+        <div class="card">
+          <div class="img-fluid card-image">{% cloudinary product.image.url width=200 height=200 %}</div>
+            <!-- image overlay text -->
+            <div class="card-img-overlay">
+                <a href="{{ product.get_absolute_url }}" aria-label="view product">
+                    <h6 class="card-title">{{ product.title }}</h6>
+                </a>   
+            </div>
+        </div> <!-- end card -->
+      </div> <!-- end col -->
+    </div> <!-- end row -->
+    <div class="row">
+    <ul>
 			<li class="list-group-item"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
 			</li>
 			<li class="list-group-item"> {% cloudinary product.image.url width=200 height=200 %} </li>
 			<li class="list-group-item"> €{{product.price}} </li>
 		</ul>
+  </div> <!-- end row -->
 	{% endfor%}
 	<!-- pagination code credit: Corey Shafer https://www.youtube.com/watch?v=acOktTcTVEQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=11 -->
 	{% if is_paginated %}
