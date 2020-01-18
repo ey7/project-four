@@ -18,7 +18,7 @@
                     <div class="carousel-item">
                           <img src="{% static 'img/maxply_index.jpg' %}" alt="Dunlop Maxply Wood Racquet" class="d-block w-100">
                           <div class="carousel-caption">
-                          <p><a class="btn btn-sm btn-primary carousel-btn-info" href="#" role="button">Dunlop Maxply</a></p>
+                          <p><a class="btn btn-sm btn-primary carousel-btn-info" href="https://racquet-shop.herokuapp.com/products/dunlop-maxply/" role="button">Dunlop Maxply</a></p>
                           </div>
                     </div>
                     <div class="carousel-item">
@@ -39,11 +39,11 @@
             </div> <!-- end of super-carousel -->
 
         <!--    about    -->
-        <aside class="about mt-2 text-center">
-          <p>Welcome to Racquets, the vintage tennis racquet shop</p>
+        <aside class="text-center mt-3">
+          <p>Welcome to Racquets, the vintage tennis racquet shop. We sell all the classic racquets from wood, hybrid/metal, oversize, graphite and modern tennis racquets.</p>
           <p class="text-center">
-            <a class="btn btn-sm btn-warning mt-2 mr-2" aria-label="about us" href="{% url 'about' %}">About</a>
-            <a class="btn btn-sm btn-warning mt-2" aria-label="products" href="{% url 'products:all-products' %}">Products</a>
+            <a class="btn btn-sm btn-warning mt-2 mb-3 mr-2" aria-label="about us" href="{% url 'about' %}">About</a>
+            <a class="btn btn-sm btn-warning mt-2 mb-3" aria-label="products" href="{% url 'products:all-products' %}">Products</a>
           </p>   
         </aside>
 
