@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-	{%  if product_list %}
-	{% for product in product_list %}
 		<div class="row">
+      {%  if product_list %}
+      {% for product in product_list %}
       <div class="col-sm-6 col-lg-4 my-3">
         <div class="card">
           <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
@@ -17,7 +17,7 @@
       </div> <!-- end col -->
     </div> <!-- end row -->
 
-	{% endfor%}
+	{% endfor %}
 	<!-- pagination code credit: Corey Shafer https://www.youtube.com/watch?v=acOktTcTVEQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=11 -->
 	{% if is_paginated %}
 
@@ -35,8 +35,8 @@
       {% endfor %}
 
       {% if page_obj.has_next %}
-        <a class="btn btn-outline-info btn-sm mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a class="btn btn-outline-info btn-sm mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        <a class="btn btn-outline-warning btn-sm mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-warning btn-sm mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
       {% endif %}
 
     {% endif %}
