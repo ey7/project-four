@@ -10,13 +10,13 @@
             <div class="card-img-overlay">
                 <a href="{{ product.get_absolute_url }}" aria-label="view product">
                     <h6 class="card-title">{{ product.title }}</h6>
-                </a>   
+                </a>
+                <p class="card-text">{{product.price}}</p>   
             </div>
         </div> <!-- end card -->
       </div> <!-- end col -->
       {% endfor %}
     </div> <!-- end row -->
-
 
 	<!-- pagination code credit: Corey Shafer https://www.youtube.com/watch?v=acOktTcTVEQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=11 -->
 	{% if is_paginated %}

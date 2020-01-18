@@ -41,6 +41,12 @@ h2 {
     padding-top: 3px; 
 }
 
+.card-text {
+    bottom: 0;
+    position: absolute;
+    padding-bottom: 3px; 
+}
+
 /* footer styling */
 .footer {
     background-color: #a9a9a9;
