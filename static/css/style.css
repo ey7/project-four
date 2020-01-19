@@ -57,14 +57,6 @@ h2 {
     margin-bottom: 40%;
 }
 
-.cart-button-detail {
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
-
 /*styling for the background container on the product detail page */
 .product-container {
     background-color: #fff;
