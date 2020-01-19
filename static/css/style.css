@@ -39,7 +39,8 @@ h2 {
 .card-title {
     top: 0;
     position: absolute;
-    padding-top: 3px; 
+    padding-top: 3px;
+    color: #0275d8; 
 }
 
 .card-text {
