@@ -64,11 +64,14 @@ h2 {
     margin-top: 40px;
     overflow: auto;
     margin-bottom: 40px;
+    
+}
+/* styling for the image container */
+.image-container {
     position: relative;
     text-align: center;
     color: white;
 }
-
 /* styling for the product image on product detail page*/
 .product-image {
     float: left;
