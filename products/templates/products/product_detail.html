@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
-  <div class="col-sm-6 my-3">
+  <div class="col-sm-6 col-md-6 my-3">
     <div class="card">
         <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
           <!-- image overlay text -->
@@ -19,7 +19,7 @@
         </div> <!-- end card -->
     </div> <!-- end col for card --> 
 
-      <div class="col-sm-6 my-3">{{product.description |linebreaks }}</div>
+      <div class="col-sm-6 col-md-6 my-3">{{product.description |linebreaks }}</div>
   </div> <!-- end row -->
 
 {% endblock %}
