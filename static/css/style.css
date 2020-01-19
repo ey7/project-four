@@ -56,6 +56,24 @@ h2 {
     margin-bottom: 40%;
 }
 
+/*styling for the background container on the product detail page */
+.product-container {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      margin-top: 40px;
+      overflow: auto;
+      margin-bottom: 40px;
+}
+
+/* styling for the product image on product detail page*/
+.product-image {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+
 /* footer styling */
 .footer {
     background-color: #a9a9a9;
@@ -75,6 +93,18 @@ h2 {
 }
 
 /* ------------------ general media queries ------------------- */
+
+/* media queries for small screens */
+@media screen and (max-width: 400px) {
+   
+   .product-image {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+   }
+}
 
 /* medium screens and up */
 @media screen and (min-width: 768px) {
