@@ -29,6 +29,7 @@ h1 {
 h2 {
     font-size: 1.1rem;
 }
+
 /* card-title styling */
 .card-image {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -56,6 +57,13 @@ h2 {
     margin-bottom: 40%;
 }
 
+.cart-button-detail {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin-right: 10px;
+}
+
 /*styling for the background container on the product detail page */
 .product-container {
     background-color: #fff;
@@ -64,15 +72,6 @@ h2 {
     margin-top: 40px;
     overflow: auto;
     margin-bottom: 40px;
-}
-
-/* styling for the product image on product detail page*/
-.product-image {
-    width: 300px;
-    height: 300px;
-    float: left;
-    padding-right: 10px;
-    padding-bottom: 10px;
 }
 
 /* footer styling */

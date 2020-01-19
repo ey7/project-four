@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <div class="card product-image">
+  <div class="card" width="300px" height="300px">
               <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
                 <!-- image overlay text -->
                 <div class="card-img-overlay">
@@ -12,7 +12,7 @@
                       {% csrf_token %}
                        <input type="hidden" name="quantity" value="1">
                        <input type="hidden" name="id" value ="{{product.id}}">
-                       <a href="#" class=" cart-button btn btn-sm btn-outline-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
+                       <a href="#" class=" cart-button-detail btn btn-sm btn-outline-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
                     </form>    
                 </div> <!-- end card img overlay -->
             </div> <!-- end card -->
