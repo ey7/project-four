@@ -64,33 +64,15 @@ h2 {
     margin-top: 40px;
     overflow: auto;
     margin-bottom: 40px;
-    
 }
-/* styling for the image container */
-.image-container {
-    position: relative;
-    text-align: center;
-    color: white;
-}
+
 /* styling for the product image on product detail page*/
 .product-image {
+    width: 300px;
+    height: 300px;
     float: left;
     padding-right: 10px;
     padding-bottom: 10px;
-}
-
-/* Bottom left text on product detail image */
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
-
-/* Bottom right text */
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
 }
 
 /* footer styling */

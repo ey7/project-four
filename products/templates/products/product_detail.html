@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <div class="product-container">
-    <img width="300" height="300" class="product-image" alt="{{product.title}}" src="{{product.image.url}}"/>
-      <h1>{{ product.title }}</h1>
-        <div>
-          {{product.description |linebreaks }}
-        </div>
-        <div class="image container">
-          <div class="bottom-left">€{{product.price}}</div> 
-            <!-- form to add an item to the cart -->
-            <form method="post" action="{% url 'add-to-cart' product.id %}">
-              {% csrf_token %}
-               <input type="hidden" name="quantity" value="1">
-               <input type="hidden" name="id" value ="{{product.id}}">
-               <a class="bottom-right btn btn-sm btn-outline-primary" href="#" onclick="$(this).closest('form').submit()">Add to cart</a>
-            </form>
-          </div> <!-- end image container -->
+  <div class="card product-image">
+              <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
+                <!-- image overlay text -->
+                <div class="card-img-overlay">
+                  <h6 class="card-title">{{ product.title }}</h6>
+                    <p class="card-text">€{{product.price}}</p>
+                    <!-- add to cart button -->
+                    <form method="post" action="{% url 'add-to-cart' product.id %}">
+                      {% csrf_token %}
+                       <input type="hidden" name="quantity" value="1">
+                       <input type="hidden" name="id" value ="{{product.id}}">
+                       <a href="#" class=" cart-button btn btn-sm btn-outline-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
+                    </form>    
+                </div> <!-- end card img overlay -->
+            </div> <!-- end card -->
+        <div>{{product.description |linebreaks }}</div>
   </div> <!-- end product container -->
 
 {% endblock %}
