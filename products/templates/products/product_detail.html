@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="row">
+  <div class="col">
+    <div class="card">
+        <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
+          <!-- image overlay text -->
+          <div class="card-img-overlay">
+            <h6 class="card-title">{{ product.title }}</h6>
+              <p class="card-text">€{{product.price}}</p>
+              <!-- add to cart button -->
+              <form method="post" action="{% url 'add-to-cart' product.id %}">
+                {% csrf_token %}
+                 <input type="hidden" name="quantity" value="1">
+                 <input type="hidden" name="id" value ="{{product.id}}">
+                 <a href="#" class=" cart-button-detail btn btn-sm btn-outline-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
+              </form>    
+          </div> <!-- end card img overlay -->
+        </div> <!-- end card -->
+    </div> <!-- end col for card --> 
 
-  <div class="card" width="300px" height="300px">
-              <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
-                <!-- image overlay text -->
-                <div class="card-img-overlay">
-                  <h6 class="card-title">{{ product.title }}</h6>
-                    <p class="card-text">€{{product.price}}</p>
-                    <!-- add to cart button -->
-                    <form method="post" action="{% url 'add-to-cart' product.id %}">
-                      {% csrf_token %}
-                       <input type="hidden" name="quantity" value="1">
-                       <input type="hidden" name="id" value ="{{product.id}}">
-                       <a href="#" class=" cart-button-detail btn btn-sm btn-outline-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
-                    </form>    
-                </div> <!-- end card img overlay -->
-            </div> <!-- end card -->
-        <div>{{product.description |linebreaks }}</div>
-  </div> <!-- end product container -->
+      <div class="col">{{product.description |linebreaks }}</div>
+  </div> <!-- end row -->
 
 {% endblock %}
