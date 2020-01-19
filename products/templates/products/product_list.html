@@ -17,7 +17,7 @@
                       {% csrf_token %}
                        <input type="hidden" name="quantity" value="1">
                        <input type="hidden" name="id" value ="{{product.id}}">
-                       <a href="#" class=" cart-button btn btn-sm btn-outline-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
+                       <a href="#" class=" cart-button btn btn-sm btn-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
                     </form>       
             </div> <!-- end card-img-overlay -->
         </div> <!-- end card -->
