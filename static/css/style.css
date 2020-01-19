@@ -94,18 +94,6 @@ h2 {
 
 /* ------------------ general media queries ------------------- */
 
-/* media queries for small screens */
-@media screen and (max-width: 400px) {
-   
-   .product-image {
-        float: none;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-   }
-}
-
 /* medium screens and up */
 @media screen and (min-width: 768px) {
     html {
@@ -133,6 +121,13 @@ h2 {
     .carousel-item {
     height: 85vh;
     }
+    .product-image {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+   }
 }
 
 /*  extra large screens and up */
