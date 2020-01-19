@@ -5,7 +5,7 @@
   <p>{{ product.title }}</p>
   <p>{% cloudinary product.image.url width=300 height=300 %}</p>
   <p>€{{ product.price }}</p> 
-  <p>{{ product.description }}</p> 
+  <p>{{ product.description|linebreaks }}</p> 
   
 <!-- form to add an item to the cart -->
 	<form method="post" action="{% url 'add-to-cart' product.id %}">
