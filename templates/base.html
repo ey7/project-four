@@ -57,9 +57,6 @@
                    <li class="nav-item">
                     <a href="{% url 'logout' %}" class="nav-link text-light">Logout</a>
                   </li>
-                  <li class="nav-item">
-                    <a href="{% url 'cart' %}" class="nav-link text-light">Cart</a>
-                  </li>
                   {% else %}
                   <li class="nav-item">
                     <a href="{% url 'login' %}" class="nav-link text-light">Login</a>
@@ -72,7 +69,14 @@
                     <a href="{% url 'contact' %}" class="nav-link text-light">Contact</a>
                   </li>
                   <li class="nav-item">
-                    <a href="{% url 'search:search' %}" class="nav-link text-light">Search</a>
+                    <a href="{% url 'search:search' %}" class="nav-link text-light">
+                      <svg class="svg-icon" width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/></svg>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% url 'cart' %}" class="nav-link text-light">
+                      <svg class="svg-icon" width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 2h16l-3 9H4a1 1 0 1 0 0 2h13v2H4a3 3 0 0 1 0-6h.33L3 5 2 2H0V0h3a1 1 0 0 1 1 1v1zm1 18a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm10 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+                    </a>
                   </li>  
                 </ul>
               </div> <!-- end of navbar collapse -->

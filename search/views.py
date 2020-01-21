@@ -29,9 +29,4 @@ def search_results(request):
 			return render(request, "search/search.html",
 				{"results": results, "results_count": results_count})
 
-# function to search for products on the products page
-def search_products(request):
-	query = request.GET['q']
-	products = Product.objects.filter(title__icontains=request.GET['q'])
-	return render(request, "products/product_list.html", {'products': products, 'query':query})
 

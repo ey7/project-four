@@ -87,6 +87,20 @@ h2 {
     margin-left: 5px
 }
 
+/* svg icons will change colour to white on hover */
+.svg-icon:hover {
+    fill: #a9a9a9;
+}
+
+/* search icon that will appear in search bar in search page */
+/* code credit: https://www.w3schools.com/css/css_form.asp */
+.form-search {
+    background-image: url('../img/search1.svg');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
 /* footer styling */
 .footer {
     background-color: #a9a9a9;
