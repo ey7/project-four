@@ -90,11 +90,28 @@ h2 {
 /* svg icons off white colour */
 .svg-icon {
     fill: #f8f8ff;
+    width: 25px;
+    height: 25px;
 }
 
 /* svg icons will change colour to grey on hover */
 .svg-icon:hover {
-    fill: #a9a9a9;
+    fill: #bababa;
+}
+
+/* styling for the logo title on the top left of navbar*/
+#logo-title:hover {
+    color: #bababa;
+}
+
+/* navbar dropdown colour */
+#navbarDropdown {
+        color: #fff;
+}
+
+/* navbar dropdown will change colour to grey on hover */
+#navbarDropdown:hover {
+    color: #bababa;
 }
 
 /* search icon that will appear in search bar in search page */
