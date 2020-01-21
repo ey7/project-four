@@ -7,5 +7,4 @@ urlpatterns = [
 	path('', search, name="search"),
 	path('results/', search_results, name="search-results"),
 	path('<category>/', product_category, name='category-detail'),
-	path('products/', search_products, name='products-search'),
 ]

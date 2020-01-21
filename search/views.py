@@ -18,7 +18,7 @@ def search_results(request):
 		query = request.GET.get('q')
 
 		if query is not None:
-			lookups = Q(title__icontains=query) | Q(image__icontains=query)
+			lookups = Q(title__icontains=query) | Q(category__icontains=query)
 
 			results = Product.objects.filter(lookups).distinct()
 			results_count = Product.objects.filter(lookups).distinct().count()
