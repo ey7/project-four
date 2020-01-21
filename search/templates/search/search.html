@@ -10,23 +10,21 @@
 	</div>
 	<div>
 		{% if results_count == 0 %}
-		<h2> Sorry, no results found for "{{ request.GET.q }}" </h2>
+		<h2> Sorry, no results for "{{ request.GET.q }}" </h2>
 		
 		{% elif results_count == 1 %}
-		<h2 class="pb-3">Your search for "
+		<h2 class="pb-3">"
 	                <span>{{ request.GET.q }}</span>" yielded 
 	                <span>1</span> result
 	    </h2>
 		
 		{% elif results_count > 1 %}
-		<h2 class="pb-3">Your search for "
+		<h2 class="pb-3">"
 	                <span>{{ request.GET.q  }}</span>" yielded 
 	                <span>{{ results_count }}</span> results
 	    </h2>
 
 	    {% else%}
-	    
-
 		{% endif %}
 	</div>
 	<div>
@@ -42,6 +40,13 @@
                     <h6 class="card-title">{{ result.title }}</h6>
                 </a>
                 <p class="card-text">€{{result.price}}</p>
+                	<!-- add to cart button -->
+                    <form method="post" action="{% url 'add-to-cart' result.id %}">
+                      {% csrf_token %}
+                       <input type="hidden" name="quantity" value="1">
+                       <input type="hidden" name="id" value ="{{result.id}}">
+                       <a href="#" class=" cart-button btn btn-sm btn-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
+                    </form>       
             </div> <!-- end card-img-overlay -->
         </div> <!-- end card -->
       </div> <!-- end col -->
