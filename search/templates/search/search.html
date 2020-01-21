@@ -3,7 +3,7 @@
 	<h1>Search</h1>
 
 	<div>
-	    <form class="searchbox" action="{% url 'search-results' %}" method="GET" value="{{request.GET.q}}">
+	    <form class="searchbox" action="{% url 'search:search-results' %}" method="GET" value="{{request.GET.q}}">
 			<input type="text" class="form-control" name="q" aria-label="search text input" value="{{request.GET.q}}" placeholder="Search products"/>
 			<input type="submit" id="searchbox-button" class="btn btn-sm btn-primary" aria-label="search button" name="submit" value="Search"/>
 		</form>
