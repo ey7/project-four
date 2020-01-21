@@ -1,5 +1,5 @@
 from django.urls import path
-from . views import search, search_results, product_category, search_products
+from . views import search, search_results, product_category
 
 app_name = 'search'
 
