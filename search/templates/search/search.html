@@ -2,42 +2,43 @@
 {% block content %} 
 	<h1>Search</h1>
 
-<div>
-    <form class="searchbox" action="." method="GET" value="{{request.GET.q}}">
-		<input type="text" class="form-control" name="q" aria-label="search text input" value="{{request.GET.q}}" placeholder="Search products"/>
-		<input type="submit" id="searchbox-button" class="btn btn-sm btn-primary" aria-label="search button" name="submit" value="Search"/>
-	</form>
-</div>
+	<div>
+	    <form class="searchbox" action="{% url 'search-results' %}" method="GET" value="{{request.GET.q}}">
+			<input type="text" class="form-control" name="q" aria-label="search text input" value="{{request.GET.q}}" placeholder="Search products"/>
+			<input type="submit" id="searchbox-button" class="btn btn-sm btn-primary" aria-label="search button" name="submit" value="Search"/>
+		</form>
+	</div>
+	<div>
+		{% if results_count == 0 %}
+		<h2> Sorry, no results found for "{{ request.GET.q }}" </h2>
+		
+		{% elif results_count == 1 %}
+		<h2 class="pb-3">Your search for "
+	                <span>{{ request.GET.q }}</span>" yielded 
+	                <span>1</span> result
+	    </h2>
+		
+		{% elif results_count > 1 %}
+		<h2 class="pb-3">Your search for "
+	                <span>{{ request.GET.q  }}</span>" yielded 
+	                <span>{{ results_count }}</span> results
+	    </h2>
 
-	{% if results_count == 0 %}
-	<h2> Sorry, no results found for "{{ request.GET.q }}" </h2>
-	
-	{% elif results_count == 1 %}
-	<h2 class="pb-3">Your search for "
-                <span>{{ request.GET.q }}</span>" yielded 
-                <span>1</span> result
-    </h2>
-	
-	{% elif results_count > 1 %}
-	<h2 class="pb-3">Your search for "
-                <span>{{ request.GET.q  }}</span>" yielded 
-                <span>{{ results_count }}</span> results
-    </h2>
+	    {% else%}
+	    
 
-    {% else%}
-    
-
-	{% endif %}
-
-	{% if results %}
-	{% for result in results %}
-	<ul>
-		<li class="list-group-item"><a class="text-dark text-primary" href="{% url 'products:product-detail' result.slug %}">{{ result.title }}</a>
-		</li>
-		<li class="list-group-item text-dark">{{ result.description|truncatewords:20 }}</li>
-	</ul>
-	{% endfor %}
-
-	{% endif %}
-
+		{% endif %}
+	</div>
+	<div>
+		{% if results %}
+		{% for result in results %}
+		<ul>
+			<li class="list-group-item"><a class="text-dark text-primary" href="{% url 'products:product-detail' result.slug %}">{{ result.title }}</a>
+			</li>
+			<li class="list-group-item text-dark">{{ result.description|truncatewords:20 }}</li>
+		</ul>
+		{% endfor %}
+		
+		{% endif %}
+	</div>
 {% endblock%}
