@@ -3,9 +3,9 @@
 	<h1>Search</h1>
 
 <div>
-    <form action="{% url 'search-results' %}" method="GET" value="{{request.GET.q}}">
-		<input type="text" name="q" value="{{request.GET.q}}" placeholder="Search products"/>
-		<input type="submit" name="submit" value="Search"/>
+    <form class="searchbox" action="." method="GET" value="{{request.GET.q}}">
+		<input type="text" class="form-control" name="q" aria-label="search text input" value="{{request.GET.q}}" placeholder="Search products"/>
+		<input type="submit" id="searchbox-button" class="btn btn-sm btn-primary" aria-label="search button" name="submit" value="Search"/>
 	</form>
 </div>
 
@@ -32,7 +32,7 @@
 	{% if results %}
 	{% for result in results %}
 	<ul>
-		<li class="list-group-item"><a class="text-dark" href="{% url 'products:product-detail' result.slug %}">{{ result.title }}</a>
+		<li class="list-group-item"><a class="text-dark text-primary" href="{% url 'products:product-detail' result.slug %}">{{ result.title }}</a>
 		</li>
 		<li class="list-group-item text-dark">{{ result.description|truncatewords:20 }}</li>
 	</ul>

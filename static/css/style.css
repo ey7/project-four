@@ -68,6 +68,25 @@ h2 {
     margin-bottom: 40px;
 }
 
+/* styling for BS form control class on register, login and search pages */
+.form-control {
+    width: 50%; /* 50% width on larger screens */
+}
+
+/* searchbox on search pages */
+/* code credit: https://www.w3schools.com/howto/howto_css_inline_form.asp; */
+.searchbox {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* searchbox button on search pages */
+#searchbox-button {
+    margin-left: 5px
+}
+
 /* footer styling */
 .footer {
     background-color: #a9a9a9;
