@@ -42,13 +42,13 @@
                     <h6 class="card-title">{{ result.title }}</h6>
                 </a>
                 <p class="card-text">€{{result.price}}</p>
-                <!-- add to cart button -->
+                <!-- add to cart button 
                     <form method="post" action="{% url 'add-to-cart' product.id %}">
                       {% csrf_token %}
                        <input type="hidden" name="quantity" value="1">
                        <input type="hidden" name="id" value ="{{product.id}}">
                        <a href="#" class=" cart-button btn btn-sm btn-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
-                    </form>       
+                    </form> -->      
             </div> <!-- end card-img-overlay -->
         </div> <!-- end card -->
       </div> <!-- end col -->
