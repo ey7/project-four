@@ -31,12 +31,29 @@
 	</div>
 	<div>
 		{% if results %}
-		{% for result in results %}
-		<ul>
-			<li class="list-group-item"><a class="text-dark text-primary" href="{% url 'products:product-detail' result.slug %}">{{ result.title }}</a>
-			</li>
-			<li class="list-group-item text-dark">{{ result.description|truncatewords:20 }}</li>
-		</ul>
+		<div class="row">
+      {% for result in results %}
+      <div class="col-sm-6 col-lg-4 my-3">
+        <div class="card">
+          <img src="{{ result.image.url }}" alt="product image" class="img-fluid card-image">
+            <!-- image overlay text -->
+            <div class="card-img-overlay">
+                <a href="{{ product.get_absolute_url }}" aria-label="view product">
+                    <h6 class="card-title">{{ result.title }}</h6>
+                </a>
+                <p class="card-text">€{{result.price}}</p>
+                <!-- add to cart button -->
+                    <form method="post" action="{% url 'add-to-cart' product.id %}">
+                      {% csrf_token %}
+                       <input type="hidden" name="quantity" value="1">
+                       <input type="hidden" name="id" value ="{{product.id}}">
+                       <a href="#" class=" cart-button btn btn-sm btn-primary" onclick="$(this).closest('form').submit()">Add to cart</a>
+                    </form>       
+            </div> <!-- end card-img-overlay -->
+        </div> <!-- end card -->
+      </div> <!-- end col -->
+      {% endfor %}
+    </div> <!-- end row -->
 		{% endfor %}
 		
 		{% endif %}

@@ -1,13 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="row">
-    <div class="col">
-      <form class="searchbox mt-3" action="{% url 'search:products-search' %}" method="GET" value="{{request.GET.q}}">
-      <input type="text" class="form-control" name="q" aria-label="search text input" value="{{request.GET.q}}" placeholder="Search products"/>
-      <input type="submit" id="searchbox-button" class="btn btn-sm btn-primary" aria-label="search button" name="submit" value="Search"/>
-    </form>
-  </div>
-</div>
   {%  if product_list %}
 		<div class="row">
       {% for product in product_list %}
@@ -57,6 +49,6 @@
     {% endif %}
 		
 	{% else %}
-	<h4 class= "text-center"> There are no products to display at this time </h4>	
+	<h4 class= "text-center mt-3"> There are no products to display at this time </h4>	
 	{% endif %}
 {% endblock%}
