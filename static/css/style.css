@@ -87,7 +87,12 @@ h2 {
     margin-left: 5px
 }
 
-/* svg icons will change colour to white on hover */
+/* svg icons off white colour */
+.svg-icon {
+    fill: #f8f8ff;
+}
+
+/* svg icons will change colour to grey on hover */
 .svg-icon:hover {
     fill: #a9a9a9;
 }
