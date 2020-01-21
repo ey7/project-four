@@ -38,7 +38,7 @@
           <img src="{{ result.image.url }}" alt="product image" class="img-fluid card-image">
             <!-- image overlay text -->
             <div class="card-img-overlay">
-                <a href="{{ product.get_absolute_url }}" aria-label="view product">
+                <a href="{{ result.get_absolute_url }}" aria-label="view product">
                     <h6 class="card-title">{{ result.title }}</h6>
                 </a>
                 <p class="card-text">€{{result.price}}</p>
