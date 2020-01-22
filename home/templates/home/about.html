@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
 {% block content%} 
-	<h1> this is the about page</h1>
+{% load static %}
+	<div class="row">
+		<div class ="col-12 ">
+			<h1 class="h3 mt-3"> Racquets -vintage tennis racquet shop</h1>
+			<h6> Collectors tennis racquets from past champions </h6>
+			<hr>
+		</div>
+		<div class="col-12 col-md-4 mb-3">
+		 <img src="{% static 'img/sampras_about.jpg' %}" alt="Pete Sampras Tennis Champion" class="w-100">
+		</div>
+		 <div class="col-12 col-md-8">
+			 <p>To play tennis you need a racquet, and the racquet is personal to each and every player. It's their main tool on the court, serving as a teammate of sorts in a primarily individual sport.</p>
 
+			<p>Development of such an essential and personal piece of equipment has been no simple task over the years, evolving from wood to metal to modern graphite composite frames.</p>
+			
+			<p> We have five main categories of racquets, from wood, metal/hybrid, through to oversize, graphite and modern frames from proud manufacturers such as Wilson, Head, Dunlop and Babolat.<p>  
+
+			<p> Please browse our collection of highly sought after racquets from past champions, many are collectors items and highly sought after.</p>
+		 </div>
+		 <div class="col-12 text-center mb-3">
+            <a href="{% url 'products:all-products' %}" class="btn btn-sm btn-primary mb-3">Visit shop</a>
+        </div>
+	</div> <!-- end row -->
 {% endblock%}
