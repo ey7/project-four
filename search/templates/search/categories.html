@@ -11,7 +11,7 @@
                     <a href="{{ product.get_absolute_url }}" aria-label="view product">
                         <h6 class="card-title">{{ product.title }}</h6>
                     </a>
-                    <p class="card-text">€{{product.price}}</p>
+                    <p class="card-text">€{{product.price.normalize}}</p>
                     <!-- add to cart button -->
                     <form method="post" action="{% url 'add-to-cart' product.id %}">
                       {% csrf_token %}
@@ -26,7 +26,7 @@
         </div> <!-- end row -->
         
         {% else %}
-        <p> Sorry, nothing to display</p>
+        <p class="text-center"> Sorry, nothing to display</p>
     {% endif %}
 
 {% endblock %}
