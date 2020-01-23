@@ -63,7 +63,7 @@ h2 {
     right: 0;
     position: absolute;
     margin-right: 50px;
-    margin-bottom: 50%;
+    margin-bottom: 45%;
 }
 
 .cart-button-add {
@@ -71,7 +71,7 @@ h2 {
     right: 0;
     position: absolute;
     margin-right: 10px;
-    margin-bottom: 50%;
+    margin-bottom: 45%;
 }
 
 /*styling for the background container on the product detail page */
