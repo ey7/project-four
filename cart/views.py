@@ -10,12 +10,13 @@ def cart_view(request):
 def add_to_cart(request, id):
 	# adds one product to the cart
 	
-	id = request.POST.get('id')
-	cart = request.session.get('cart', {})
-	cart[id] = cart.get(id, 0) + 1
-	request.session['cart'] = cart
+	if request.method == 'POST':
+		id = request.POST.get('id')
+		cart = request.session.get('cart', {})
+		cart[id] = cart.get(id, 0) + 1
+		request.session['cart'] = cart
 
-	return render(request,'cart/cart_view.html')
+		return render(request,'cart/cart_view.html')
 
 @login_required
 def remove_from_cart(request, id):
