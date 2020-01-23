@@ -11,7 +11,7 @@
                 <a href="{{ item.product.get_absolute_url }}" aria-label="view product">
                     <h6 class="card-title">{{ item.product.title }}:  <span class="badge badge-primary">{{item.quantity}}</span></h6>
                 </a>
-                <p class="card-text">€{{item.product.price.normalize()}}</p>
+                <p class="card-text">€{{item.product.price.normalize}}</p>
                 	<!-- remove from cart button -->
                     <form method="post" action="{% url 'remove-from-cart' item.id %}">
                       {% csrf_token %}
@@ -32,7 +32,7 @@
       {% endfor %}
     
 	<div class="col-12">
-	<p class="text-center">Total cost: €{{ total.normalize() }}</p>
+	<p class="text-center">Total cost: €{{ total.normalize }}</p>
 	<p class="text-center"> Total products: {{ product_count }}</p>
 	<p class="text-center"><a href="{% url 'checkout' %}" class="btn btn-sm btn-primary">Checkout</a></p>
 
