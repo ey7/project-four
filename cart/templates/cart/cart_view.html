@@ -8,17 +8,16 @@
           <img src="{{ item.product.image.url }}" alt="product image" class="img-fluid card-image">
             <!-- image overlay text -->
             <div class="card-img-overlay">
-                <a href="{{ product.get_absolute_url }}" aria-label="view product">
-                    <h6 class="card-title">{{ item.product.title }}</h6>
+                <a href="{{ item.product.get_absolute_url }}" aria-label="view product">
+                    <h6 class="card-title">{{ item.product.title }} X {{item.quantity}}</h6>
                 </a>
                 <p class="card-text">€{{item.product.price}}</p>
-                <p class="card-text">€{{item.quantity}}</p>
                 <!-- add to cart button -->
                     <form method="post" action="{% url 'remove-from-cart' item.id %}">
                       {% csrf_token %}
                        <input type="hidden" name="quantity" value="1">
                        <input type="hidden" name="id" value ="{{item.id}}">
-                       <a href="#" class=" cart-button btn btn-sm btn-danger" onclick="$(this).closest('form').submit()">-1</a>
+                       <a href="#" class=" cart-button btn btn-sm btn-danger" onclick="$(this).closest('form').submit()">-</a>
                     </form>       
             </div> <!-- end card-img-overlay -->
         </div> <!-- end card -->
@@ -26,13 +25,14 @@
       {% endfor %}
     
 	<div class="col-12">
-	<p class="text-center">Total cost:€{{ total }}</p>
+	<p class="text-center">Total cost: €{{ total }}</p>
 	<p class="text-center"> Total products: {{ product_count }}</p>
-	<a href="{% url 'checkout' %}" class="btn btn-primary text-center">Checkout</a>
+	<p class="text-center"><a href="{% url 'checkout' %}" class="btn btn-sm btn-primary">Checkout</a></p>
 
 {% else %}
 
 	<h6 class="text-center mt-3">There are no products in your cart</h6>
+	<a href="{% url 'products:all-products' %}" class="btn btn-sm btn-primary my-3">Shop for racquets</a>
 	</div> <!-- end col-->
 	</div> <!-- end row -->
 {% endif %}
