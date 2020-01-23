@@ -8,28 +8,27 @@ def cart_view(request):
 
 @login_required
 def add_to_cart(request, id):
-	# add a quantity of product to the cart
-	quantity = int(request.POST.get('quantity'))
-
+	# adds one product to the cart
+	
+	id = request.POST.get('id')
 	cart = request.session.get('cart', {})
-	if id in cart:
-		cart[id] = int(cart[id]) + quantity
-	else:
-		cart[id] = cart.get(id, quantity)
+	cart[id] = cart.get(id, 0) + 1
+	request.session['cart'] = cart
 
-		request.session['cart'] = cart
-		return render(request,'cart/cart_view.html')
+	return render(request,'cart/cart_view.html')
 
 @login_required
 def remove_from_cart(request, id):
-	# remove an item from the cart
+	# remove only one item from the cart, if empty, delete
 
 	if request.method == 'POST':
-		item_remove = request.POST.get('id')
+		id = request.POST.get('id')
 		cart = request.session.get('cart', {})
 
-		if cart[item_remove] > 0:
-			cart.pop(item_remove)
+		if id in cart:
+			cart[id] -= 1
+			if cart[id] == 0:
+			 	del cart[id]
 			request.session['cart'] = cart
 
 			return render(request, 'cart/cart_view.html')
