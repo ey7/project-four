@@ -34,3 +34,19 @@ def remove_from_cart(request, id):
 
 			return render(request, 'cart/cart_view.html')
 
+@login_required
+def remove_all_of_one_item_from_cart(request, id):
+	# remove all of one particular item from cart
+	if request.method == 'POST':
+		id = request.POST.get('id')
+		cart = request.session.get('cart', {})
+
+		if cart[id] == 0:
+			del cart[id]
+		request.session['cart'] = cart
+
+		return render(request, 'cart/cart_view.html')
+
+
+
+
