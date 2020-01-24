@@ -42,7 +42,7 @@
     <!-- Payment Form -->
     <div class="col-12">
         <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-                <h3 class="mb-3"><strong>Payment Details:</strong></h3>
+                <h3 class="mb-3 text-center"><strong>Payment Details</strong></h3>
                 <div id="credit-card-errors" style="display: none;">
                     <div id="alert-message block-message error" id="stripe-error-message"></div>
                 </div>
@@ -62,7 +62,7 @@
             {% csrf_token %}
             <!-- Submit Payment Button -->
             <div class="form-group col-md-12">
-                <input class=" btn btn-primary m-auto" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                <input class=" btn btn-primary m-auto" id="submit_payment_btn" name="commit" type="submit" value="Pay Now">
             </div>
         </form>
     </div> <!-- end page row -->
