@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-<h1>Checkout</h1>
+    <h1>Checkout</h1>
     {%  if cart_items %}
     <div class="row">
     {% for item in cart_items %}
@@ -39,27 +39,26 @@
          <h6><strong>Total:</strong> €{{total.normalize}} </h6>     
     </div> <!-- end col -->
 
-        <!-- Payment Form -->
-        <div class="col-12">
-            <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+    <!-- Payment Form -->
+    <div class="col-12">
+        <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
                 <h3>Payment Details:</h3>
-            
                 <div id="credit-card-errors" style="display: none;">
                     <div id="alert-message block-message error" id="stripe-error-message"></div>
                 </div>
-        </div> <!-- end col -->
-            <div class="row">
-                <!-- Card Infomation -->
-                <div class="form-group col-md-6">
-                    <h6>Card Details</h6>
-                    {{ payment_form |crispy }}  
-                </div>
-                <!-- Billing Infomation -->   
-                <div class="form-group col-md-6">
-                    <h6>Billing Address</h6>
-                    {{ order_form |crispy }}
-                </div>
+    </div> <!-- end col -->
+            
+            <!-- Card Infomation -->
+            <div class="form-group col-md-6">
+                <h6>Card Details</h6>
+                {{ payment_form |crispy }}  
             </div>
+            <!-- Billing Infomation -->   
+            <div class="form-group col-md-6">
+                <h6>Billing Address</h6>
+                {{ order_form |crispy }}
+            </div>
+            
             {% csrf_token %}
             <!-- Submit Payment Button -->
             <div class="form-group col-md-12">
