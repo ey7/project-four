@@ -15,29 +15,33 @@
 
 {% block content %}
 <h1>Checkout</h1>
+    {%  if cart_items %}
+    <div class="row">
+    {% for item in cart_items %}
 
-{% for item in cart_items %}
-
-<div class="col-sm-6 col-lg-4 my-3">
-        <div class="card">
-          <img src="{{ item.product.image.url }}" alt="product image" class="img-fluid card-image">
-            <!-- image overlay text -->
-                <div class="card-img-overlay">
-                    <a href="{{ item.product.get_absolute_url }}" aria-label="view product">
-                        <h6 class="card-title">{{ item.product.title }}:  <span class="badge badge-primary">{{item.quantity}}</span></h6>
-                    </a>
-                    <h6 class="card-text">€{{item.product.price.normalize}} x <span class="badge badge-primary">{{item.quantity}}</span></h6>
-                </div> <!-- end card-img-overlay -->
-        </div> <!-- end card -->
-      </div> <!-- end col -->
+        <div class="col-sm-6 col-lg-4 my-3">
+            <div class="card">
+                <img src="{{ item.product.image.url }}" alt="product image" class="img-fluid card-image">
+                    <!-- image overlay text -->
+                    <div class="card-img-overlay">
+                        <a href="{{ item.product.get_absolute_url }}" aria-label="view product">
+                            <h6 class="card-title">{{ item.product.title }}:  <span class="badge badge-primary">{{item.quantity}}</span></h6>
+                        </a>
+                        <h6 class="card-text">€{{item.product.price.normalize}} x <span class="badge badge-primary">{{item.quantity}}</span></h6>
+                    </div> <!-- end card-img-overlay -->
+            </div> <!-- end card -->
+        </div> <!-- end col -->
 
      {% endfor %}
+    {% endif %}
+    <div class="col-12">
+         <h6><strong>Total:</strong> €{{total.normalize}} </h6>
 
-     <h6><strong>Total:</strong> €{{total.normalize}} </h6>
+         <h6><strong>Total products:</strong> {{ product_count }}</h6>
+    </div> <!-- end col -->
 
-     <h6><strong>Total products:</strong> {{ product_count }}</h6>
+    <!-- Payment Form -->
 
-<!-- Payment Form -->
     <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
         <h3>Payment Details:</h3>
     
@@ -63,5 +67,5 @@
             <input class=" btn btn-primary m-auto" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
         </div>
     </form>
-
+    </div> <!-- end row -->
 {% endblock %}
