@@ -8,10 +8,10 @@
           <img src="{{ item.product.image.url }}" alt="product image" class="img-fluid card-image">
             <!-- image overlay text -->
             	<div class="card-img-overlay">
-                <a href="{{ item.product.get_absolute_url }}" aria-label="view product">
-                    <h6 class="card-title">{{ item.product.title }}:  <span class="badge badge-primary">{{item.quantity}}</span></h6>
-                </a>
-                <h6 class="card-text">€{{item.product.price.normalize}} x <span class="badge badge-primary">{{item.quantity}}</span></h6>
+	                <a href="{{ item.product.get_absolute_url }}" aria-label="view product">
+	                    <h6 class="card-title">{{ item.product.title }}:  <span class="badge badge-primary">{{item.quantity}}</span></h6>
+	                </a>
+	                <h6 class="card-text">€{{item.product.price.normalize}} x <span class="badge badge-primary">{{item.quantity}}</span></h6>
                 	<!-- remove from cart button -->
                     <form method="post" action="{% url 'remove-from-cart' item.id %}">
                       {% csrf_token %}
@@ -25,17 +25,14 @@
                        <input type="hidden" name="quantity" value="1">
                        <input type="hidden" name="id" value ="{{item.id}}">
                        <a href="#" class="cart-button-add btn btn-sm btn-success" aria-label="add one item to cart" onclick="$(this).closest('form').submit()">+</a>
-                    </form>            
+                    </form> 
+                    <!-- remove all items from cart button -->
+					<form method="post" action="{% url 'remove-all-from-cart' item.id %}">
+	                  {% csrf_token %}
+	                   <input type="hidden" name="id" value ="{{item.id}}">
+	                   <a href="#" class="cart-remove-all btn btn-sm btn-danger" aria-label="remove all of one item from cart" onclick="$(this).closest('form').submit()">Remove all</a>
+	                 </form>	           
             	</div> <!-- end card-img-overlay -->
-            <div class="card-footer text-center">
-			<!-- remove all items from cart button -->
-				<form method="post" action="{% url 'remove-all-from-cart' item.id %}">
-                  {% csrf_token %}
-                   <input type="hidden" name="quantity" value="1">
-                   <input type="hidden" name="id" value ="{{item.id}}">
-                   <a href="#" class=" btn btn-sm btn-danger" aria-label="remove all of one item from cart" onclick="$(this).closest('form').submit()">Remove all</a>
-                 </form>	
-            </div> <!-- end card footer -->
         </div> <!-- end card -->
       </div> <!-- end col -->
       {% endfor %}

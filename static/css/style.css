@@ -74,6 +74,13 @@ h2 {
     margin-bottom: 45%;
 }
 
+.cart-remove-all {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin-right: 10px;
+}
+
 /*styling for the background container on the product detail page */
 .product-container {
     background-color: #fff;
