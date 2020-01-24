@@ -42,8 +42,8 @@ def remove_all_of_one_item_from_cart(request, id):
 		cart = request.session.get('cart', {})
 
 		if cart[id] > 0:
-			cart.pop(id)
-
+			del cart[id]
+			
 			request.session['cart'] = cart
 
 		return render(request, 'cart/cart_view.html')
