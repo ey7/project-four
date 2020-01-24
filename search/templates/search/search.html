@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %} 
-	<h1>Search</h1>
+	<h1 class="mb-3 mt-3">Search</h1>
 
 	<div>
 	    <form class="searchbox" action="{% url 'search:search-results' %}" method="GET" value="{{request.GET.q}}">
