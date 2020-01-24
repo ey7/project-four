@@ -38,8 +38,8 @@
       {% endfor %}
     
 	<div class="col-12">
-	<p class="text-center">Total cost: €{{ total.normalize }}</p>
-	<p class="text-center"> Total products: {{ product_count }}</p>
+	<p><strong>Total:</strong> €{{ total.normalize }}</p>
+	<p><strong>Total products:</strong> {{ product_count }}</p>
 	<p class="text-center"><a href="{% url 'checkout' %}" aria-label="proceed to checkout" class="btn btn-sm btn-primary">Checkout</a></p>
 	</div>
 {% else %}

@@ -27,37 +27,15 @@
                         <h6 class="card-title">{{ item.product.title }}:  <span class="badge badge-primary">{{item.quantity}}</span></h6>
                     </a>
                     <h6 class="card-text">€{{item.product.price.normalize}} x <span class="badge badge-primary">{{item.quantity}}</span></h6>
-                    <!-- remove from cart button -->
-                    <form method="post" action="{% url 'remove-from-cart' item.id %}">
-                      {% csrf_token %}
-                       <input type="hidden" name="quantity" value="1">
-                       <input type="hidden" name="id" value ="{{item.id}}">
-                       <a href="#" class=" cart-button-remove btn btn-sm btn-danger" aria-label="remove one item from cart" onclick="$(this).closest('form').submit()">-</a>
-                    </form>
-                    <!-- add to cart button -->
-                    <form method="post" action="{% url 'add-to-cart' item.id %}">
-                      {% csrf_token %}
-                       <input type="hidden" name="quantity" value="1">
-                       <input type="hidden" name="id" value ="{{item.id}}">
-                       <a href="#" class="cart-button-add btn btn-sm btn-success" aria-label="add one item to cart" onclick="$(this).closest('form').submit()">+</a>
-                    </form> 
-                    <!-- remove all items from cart button -->
-                    <form method="post" action="{% url 'remove-all-from-cart' item.id %}">
-                      {% csrf_token %}
-                       <input type="hidden" name="id" value ="{{item.id}}">
-                       <a href="#" class="cart-remove-all btn btn-sm btn-danger" aria-label="remove all of one item from cart" onclick="$(this).closest('form').submit()">Remove all</a>
-                     </form>               
                 </div> <!-- end card-img-overlay -->
         </div> <!-- end card -->
       </div> <!-- end col -->
 
      {% endfor %}
 
-     <h6 class="text-center">Total</h6>
+     <h6><strong>Total:</strong> €{{total.normalize}} </h6>
 
-     <p>{{total}}</p>
-
-     <p class="text-center"> Total products: {{ product_count }}</p>
+     <h6><strong>Total products:</strong> {{ product_count }}</h6>
 
 <!-- Payment Form -->
     <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
