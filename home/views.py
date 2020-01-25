@@ -3,10 +3,11 @@ from django.contrib.auth.signals import user_logged_out, user_logged_in
 from django.contrib import messages
 from django.conf import settings
 from .forms import ContactForm
+from products.models import Product
 
 def index(request):
-
-	return render(request, 'home/index.html')
+	products = Product.objects.order_by('?').first()
+	return render(request, 'home/index.html', {"products": products})
 
 def about(request):
 
