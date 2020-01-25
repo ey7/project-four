@@ -67,7 +67,7 @@ def checkout(request):
 @login_required
 def checkout_confirm(request, *args, **kwargs):
     # get the first object in the db
-    order = Order.objects.filter().first()
+    order = Order.objects.filter().last()
 
     return render(request, 'checkout/checkout_confirm.html', {"order": order})
 
