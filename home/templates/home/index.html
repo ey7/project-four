@@ -40,7 +40,6 @@
 
         <!--    about    -->
         <aside class="text-center mt-3">
-          <p> {{products.title}}</p>
           <p>Welcome to Racquets, the vintage tennis racquet shop. We sell all the classic racquets from wood, hybrid/metal, oversize, graphite and modern tennis racquets.</p>
           <p class="text-center">
             <a class="btn btn-sm btn-warning mt-2 mb-3 mr-2" aria-label="about us" href="{% url 'about' %}">About</a>
@@ -48,4 +47,23 @@
           </p>   
         </aside>
 
+    <!-- random sample of 6 cards to be displayed here -->
+    {%  if products %}
+    <div class="row">
+      {% for product in products %}
+      <div class="col-sm-6 col-lg-4 my-3">
+        <div class="card">
+          <img src="{{ product.image.url }}" alt="product image" class="img-fluid card-image">
+            <!-- image overlay text -->
+            <div class="card-img-overlay">
+                <a href="{{ product.get_absolute_url }}" aria-label="view product">
+                    <h6 class="card-title">{{ product.title }}</h6>
+                </a>
+                <p class="card-text">€{{product.price.normalize}}</p>
+            </div> <!-- end card-img-overlay -->
+        </div> <!-- end card -->
+      </div> <!-- end col -->
+      {% endfor %}
+    </div> <!-- end row -->
+    {% endif %}
 {% endblock %}

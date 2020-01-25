@@ -6,7 +6,7 @@ from .forms import ContactForm
 from products.models import Product
 
 def index(request):
-	products = Product.objects.order_by('?').first()
+	products = Product.objects.order_by('?')[:6]
 	return render(request, 'home/index.html', {"products": products})
 
 def about(request):
