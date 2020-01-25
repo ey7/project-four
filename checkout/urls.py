@@ -3,5 +3,5 @@ from . views import checkout, checkout_confirm
 
 urlpatterns = [
 	path('', checkout, name="checkout"),
-	path('confirm/<str:session_id>/', checkout_confirm, name="checkout_confirm")
+	path('confirm/', checkout_confirm, name="checkout_confirm")
 ]
