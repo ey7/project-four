@@ -61,7 +61,7 @@ def checkout(request):
         "payment_form": payment_form, 
         "publishable": settings.STRIPE_PUBLISHABLE
     }
-    return redirect('checkout_confirm', session_id=session_id)
+    return redirect('checkout_confirm')
     return render(request, 'checkout/checkout.html', context)
 
 @login_required
