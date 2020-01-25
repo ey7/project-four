@@ -41,7 +41,7 @@
 
     <!-- Payment Form -->
     <div class="col-12">
-        <form role="form" method="post" id="payment-form" action="{% url 'checkout_confirm' %}">
+        <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
                 <h3 class="mb-3 text-center"><strong>Payment Details</strong></h3>
                 <div id="credit-card-errors" style="display: none;">
                     <div id="alert-message block-message error" id="stripe-error-message"></div>

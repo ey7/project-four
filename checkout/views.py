@@ -46,7 +46,7 @@ def checkout(request):
             if customer.paid:
                 messages.success(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('products:all-products'))
+                return redirect(reverse('checkout_confirm'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
