@@ -28,10 +28,10 @@
                        <a href="#" class="cart-button-add btn btn-sm btn-success" aria-label="add one item to cart" onclick="$(this).closest('form').submit()">+</a>
                     </form> 
                     <!-- remove all items from cart button -->
-					<form method="post" action="{% url 'remove-all-from-cart' item.id %}">
-	                  {% csrf_token %}
-	                   <input type="hidden" name="id" value ="{{item.id}}">
-	                   <a href="#" class="cart-remove-all btn btn-sm btn-danger" aria-label="remove all of one item from cart" onclick="$(this).closest('form').submit()">Remove all</a>
+					           <form method="post" action="{% url 'remove-all-from-cart' item.id %}">
+  	                  {% csrf_token %}
+  	                   <input type="hidden" name="id" value ="{{item.id}}">
+  	                   <a href="#" class="cart-remove-all btn btn-sm btn-danger" aria-label="remove all of one item from cart" onclick="$(this).closest('form').submit()">Remove all</a>
 	                 </form>	           
             	</div> <!-- end card-img-overlay -->
         </div> <!-- end card -->

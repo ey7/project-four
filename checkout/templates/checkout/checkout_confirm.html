@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-12 mt-3">
+
+            <!-- confirm order message -->
+            <h3>Order confirmed</h3>
+
+            <p>Thank you {{order.full_name}} for your order!</p>
+
+            <p>You will receive an email when your parcel is dispatched</p>
+
+            <p>Any questions? Please <a href="{% url 'contact'%}">contact us</a></p>
+
+            <p>Thanks for shopping with us</p>
+
+            <a href="{% url 'products:all-products' %}" class="btn btn-sm btn-primary">Return to shop</a>
+
+        </div>
+    </div>
+
+{% endblock %}

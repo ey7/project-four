@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MakePaymentForm, OrderForm
-from .models import OrderLineItem
+from .models import OrderLineItem, Order
 from django.conf import settings
 from django.utils import timezone
 from products.models import Product
@@ -10,7 +10,7 @@ import stripe
 
 stripe.api_key = settings.STRIPE_SECRET
 
-@login_required()
+@login_required
 def checkout(request):
     if request.method=="POST":
         order_form = OrderForm(request.POST)
@@ -46,7 +46,7 @@ def checkout(request):
             if customer.paid:
                 messages.success(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('all-products'))
+                return redirect(reverse('products:all-products'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -63,6 +63,15 @@ def checkout(request):
     }
     
     return render(request, 'checkout/checkout.html', context)
+
+@login_required
+def checkout_confirm(request, *args, **kwargs):
+    # get the first object in the db
+    order = Order.objects.filter().first()
+
+    return render(request, 'checkout/checkout_confirm.html', {"order": order})
+
+
 
 
 
