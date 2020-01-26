@@ -21,6 +21,17 @@ class TestProductsPages(TestCase):
 
 		response = self.client.get('/products/{}'.format(product.pk))
 		self.assertEqual(response.status_code, 301)
+
+class TestProductModel(TestCase):
+
+	def test_that_product_model_returns_title(self):
+		product = Product(title='Test Racquet')
+		self.assertEqual(str(product), product.title)
+
+		
+
+
+
 		
 
 
