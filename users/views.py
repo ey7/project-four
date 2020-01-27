@@ -13,7 +13,7 @@ def register(request):
 		if form.is_valid():
 			form.save()
 			username = form.cleaned_data.get('username')
-			messages.success(request, f'You are now registered. Please log in to continue')
+			messages.info(request, f'You are now registered. Please log in to continue')
 			return redirect('login')
 
 	else:
@@ -31,7 +31,7 @@ def account(request):
 		form = EmailUsernameUpdate(request.POST,instance=request.user)
 		if form.is_valid():
 			form.save()
-			messages.success(request, f'You have now updated your account details')
+			messages.info(request, f'You have now updated your account details')
 			return redirect('account')
 
 	else:
