@@ -94,7 +94,7 @@ h2 {
 
 /* styling for BS form control class on register, login and search pages */
 .form-control {
-    width: 50%; /* 50% width on larger screens */
+    width: 70%; /* 50% width on larger screens */
 }
 
 /* searchbox on search pages */
@@ -181,6 +181,9 @@ h2 {
         margin-right: auto;
         width: 100%;
    }
+   .form-control {
+    width: 100%; /* 100% width on small screens */
+}
 }
 
 /* medium screens and up */
