@@ -167,6 +167,19 @@ h2 {
 
 .footer-logo {
     color: #fff;
+    padding-right: 20px;
+}
+
+/* github icon on footer */
+#github-icon {
+    fill: #f8f8ff;
+    width: 35px;
+    height: 35px;
+}
+
+/* github icon will change colour to blue on hover */
+#github-icon:hover {
+    fill: #0275d8;
 }
 
 /* ------------------ general media queries ------------------- */
