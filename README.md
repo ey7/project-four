@@ -1,4 +1,4 @@
-# Racquets a Django powered online tennis racqquet shop app
+# Racquets - a Django online tennis racquet shop
 
 [Racquets](https://racquet-shop.herokuapp.com/) is a fictional tennis racquet shop that allows tennis lovers to browse the racquets of past champions, with a wide variety of racquets available, from wood to metal, hybrid, graphite composite and modern frames. Many of the items on display are collectors items, and the website would appeal to both tennis enthusiasts and collectors alike.
 
@@ -33,13 +33,13 @@ The wireframes for the project, created with [Balsamiq](https://balsamiq.com/), 
 
 ### Project Design Summary
 
-- The app will be a fully functional django powered online vintage tennis equipment shop. Users will have the chance to register for a seamlesss shopping experience.
+- The app will be a fully functional django powered online vintage tennis racquet shop. Users will have the chance to register for a seamlesss shopping experience.
 - Products will be displayed as attractive cards with interesting descriptive content on the product pages.
 - Users can add items to their cart as they browse the site.
 - The app will have a shopping cart page, where users can view the items in their cart.
 - Further shopping pages of address and shipping details will allows purchasers to enter their personal information.
 - A special payment page will handle all payments, which will be implemented in the backend by Stripe.
-- Once payment is succcessful, a payment confirmation page will appear with shop contact details.
+- Once payment is successful, a payment confirmation page will appear with shop contact details.
 - The app will have full user registration, authorization and authentication functionality with hashed passwords.
 - Search functionality with a searchbox will be implemented on the products page.
 - Pagination will be implemented on the products page to limit the number of visible entries.
@@ -88,7 +88,7 @@ The shop link in the navbar provides a dropdown of options, from all racquets to
 
 ### Product list or all racquets pages
 
-The product list pages display all shop products through the use of cards with images, links and price, paginated by 6 per page. On each product is an add to cart buttton, whihc will add the product to the users card, but only if they are logged in. There are numbered buttons and next and previous buttons to allow the user to browse the various product pages.
+The product list pages display all shop products through the use of cards with images, links and price, paginated by 6 per page. On each product is an add to cart buttton, which will add the product to the user's card, but only if they are logged in. There are numbered buttons and next and previous buttons to allow the user to browse the various product pages.
 
 ### Product detail or individual product pages
 
@@ -96,11 +96,11 @@ If a user clicks on the title on any product card, it acts as a link to the indi
 
 ### Cart 
 
-When a user is logged in and hits an add to cart button on any item, the item will be added to their cart. If the cart is not empty, a badge will display beside the cart icon in the navbar, displaying the product count and number of items in their cart. Clicking the cart button in the navbar will bring the user to their cart page. If not logged in, they will be redirected to the login page. If logged in, the users cart items will be displayed as product cards. On each cart item card, there will be three buttons to modify the cart. A plus button allows the user to increment the quantity for that particular item. A minus button will decrement the quantity. A third button on each cart item will allow the user to remove all of that particular item from the cart. On each cart item will be badges displaying clearly the quantity. A cart product total and total price will display underneath, along with a checkout button. 
+When a user is logged in and hits an add to cart button on any item, the item will be added to their cart. If the cart is not empty, a badge will display beside the cart icon in the navbar, displaying the product count and number of items in their cart. Clicking the cart button in the navbar will bring the user to their cart page. If not logged in, they will be redirected to the login page. If logged in, the users cart items will be displayed as product cards. <br> On each cart item card, there will be three buttons to modify the cart. A plus button allows the user to increment the quantity for that particular item. A minus button will decrement the quantity. A third button on each cart item will allow the user to remove all of that particular item from the cart. On each cart item will be badges displaying clearly the quantity. A cart product total and total price will display underneath, along with a checkout button. 
 
 ### Checkout
 
-The checkout page will display any cart items for checkout at the top of the page. Underneath there are forms for payment, one form for billing address details and the other for payment details such as credit card. Once both forms are completed, the user can click the buy now button at the bottom. Once both forms validate with no errors, credit card payment will be handled in the backend with Stripe. If sucessfull, the user will be redirected to the payment confirmation page with a success alert message. Errors will be displayed as alert messages and the user will be asked to re-enter their details. 
+The checkout page will display any cart items for checkout at the top of the page. Underneath there are forms for payment, one form for billing address details and the other for payment details such as credit card. Once both forms are completed, the user can click the buy now button at the bottom. Once both forms validate with no errors, credit card payment will be handled in the backend with Stripe. If sucessful, the user will be redirected to the payment confirmation page with a success alert message. Errors will be displayed as alert messages and the user will be asked to re-enter their details. 
 
 ### Payment confirmation
 
@@ -200,7 +200,36 @@ You must have the the following installed on your machine:
 
 `git clone https://github.com/ey7/project-four`
 
-- More instructions to follow.....watch this space.......
+2. If your code editor has an integrated terminal, open a terminal and change directory (cd) to the directory where your extracted files are located.
+
+3. A python virtual environment on your machine is recommended. I use [virtualenv](https://virtualenv.pypa.io/en/latest/), but there are others. Follow the instructions for your operating system to install and set up a virtual environment for your project.
+
+4. In your new virtual project environment, install all the required modules(including Django) for the project:
+
+`pip -r requirements.txt` 
+
+5. Set up the environment variables as found in the settings.py file of the shopper app.
+You can do this by using an env.py file or by storing the environment variables in a .bashrc file, depending on your set up.
+
+6. Ensure that your virtual environment for the project is still active before running the following command in the project root:
+
+`python manage.py runserver`
+
+7. Your project should now be running on your localhost, port 8000:(http://www.localhost:8000/)
+
+8. You then need to makemigrations and run migrations on the app models:
+
+`python manage.py makemigrations` folowed by `python manage.py migrate`
+
+9. To access the admin section, you must create a superuser:
+
+`python manage.py createsuperuser`
+
+10. To reveal the admin log in screen, type the following url:
+
+`http://www.localhost:8000/admin`
+
+11. You can then log in with your new admin credentials, and create new products for your local Sqlite database, so that the project will run as intended. 
 
 ### Remote Deployment
 
@@ -218,11 +247,33 @@ You must have the the following installed on your machine:
 
 6. Confirm the linking of the Heroku app to the correct GitHub repository.
 
-7. In the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+7. From the Heroku dashboard, go to "Overview" > "Configure Add-ons" >
+Here please ensure to install the Heroku Postgres database and the Cloudinary Starter add ons.
+
+8. In the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
 
 Set the following config vars: 
 
-- More instructions to follow.....watch this space.......
+Key | Value
+--- | --- 
+CLOUDINARY_URL | < your Cloudinary url >
+DATABASE_URL | < your Postgres database url >
+EMAILJS_ID | < Emailjs secret key >
+SECRET_KEY | < your Django secret key>
+STRIPE_PUBLISHABLE | < your secret key>
+STRIPE_SECRET | < your secret key > 
+
+9. You must now ensure that the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) is installed on your local machine, before continuing with the following commands:
+
+`heroku run python manage.py migrate --app <your Heroku app name here>`
+
+`heroku run python manage.py createsuperuser --app <your Heroku app name here>`
+
+10. In the Heroku dashboard, click "Deploy" > "Deploy branch" and select the Github branch (normally master) that you wish to deploy to Heroku.
+
+11. Once the build has completed, the online Heroku app can be viewed by clicking "open app" in the top right hand corner of the same "Deploy" page.
+
+12. Add "/admin" to the end of the url provided, and log in with your admin superuser credentials to create new product instances for the database, so that the project will run as intended.
 
 ## Notice
 
