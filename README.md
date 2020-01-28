@@ -172,11 +172,33 @@ The user may start a search by clicking on the search icon in the navbar. This b
   
 ## Testing
 
+- Integrated tests were written in the individual apps to check the integrity and funtionality of the code.
+- The Django debugger was in constant use during development, in particular with the building of the backend functionality, routes and functions. Any errors or exceptions were investigated.
+- All possible user actions relating to forms for user authentication and payment were tested on the forms of each and every page, to ensure that the app was stable and did not crash.
+- The error pages such as 404 were tested to ensure they displayed correctly if an errant url was entered, or the server gave a 500 error.
+- Similarly all navigation links, back and forward buttons and submit and routing buttons were tested to ensure that everything was working as intended.
+- All user registration, login, authentication, cart, checkout and payment functionality were tested to ensure that all the required queries and actions were being perfomed on the database correctly.
+
 ### Further testing
+
+- The app was tested using developer tools throughout the project on multiple browsers - Chrome, Mozilla & Opera etc.
+- The developer console was used throughout the project to check for alignment and layout issues, and for javascript errors and warnings.
+- The links and buttons on all pages were manually tested to ensure everything was working correctly.
+- All breakpoints were tested for different screen sizes and viewports.
+- The app was tested on [Responsinator](https://www.responsinator.com/) and [Am I Responsive](http://ami.responsivedesign.is/) to ensure that the site pages were rendering correctly on all types of devices and orientations, such as Ipad and Iphone.
+- The app was put through the [HTML5 Validator](https://validator.w3.org/) and some errors and warnings related to the Django templating language were flagged. Django templating language is not recognised so this is normal.
+- The app was put through the [CSS Validator](https://jigsaw.w3.org/css-validator/) and some errors were uncovered related to the Bootstrap css which is not something that I can control. My own css code was error free.
+- I also tested the website on [google mobile friendly](https://search.google.com/test/mobile-friendly) and recieved a mobile friendly result. 
+- I tested the website on personal and other family devices such as my laptop and Android mobile phone, iPad and iPhone and Samsung Galaxy Tab in both potrait and landscape orientations.
 
 ## Bugs and known issues
 
 ## Content credits
+
+- The favicon for the site was downloaded for free from [iconscout](https://iconscout.com/).
+- SVG icons throughout the site were used courtesy of [Zondicons](https://www.zondicons.com/).
+- Product Card images and descriptive product text for each racquet on the site was taken from [Smash Hit tennis website](https://racquets.tennisfame.com/)
+- No copyright infringement is intended as this is an educational project.
 
 ## Acknowledgements
 
@@ -200,11 +222,11 @@ You must have the the following installed on your machine:
 
 `git clone https://github.com/ey7/project-four`
 
-2. If your code editor has an integrated terminal, open a terminal and change directory (cd) to the directory where your extracted files are located.
+2. If your code editor has an integrated terminal, open a terminal and change directory (cd) to the directory where your extracted files are located. Otherwise, open a terminal on your machine.
 
 3. A python virtual environment on your machine is recommended. I use [virtualenv](https://virtualenv.pypa.io/en/latest/), but there are others. Follow the instructions for your operating system to install and set up a virtual environment for your project.
 
-4. In your new virtual project environment, install all the required modules(including Django) for the project:
+4. In your new virtual project environment, install all the required modules (including Django) for the project:
 
 `pip -r requirements.txt` 
 
