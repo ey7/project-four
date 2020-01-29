@@ -1,6 +1,6 @@
 # Racquets - a Django online tennis racquet shop
 <hr>
-<img src="static/images/responsive_views.png" alt="responsive design viewports" style="max-width:100%;">
+<img src="static/img/responsive_views.png" alt="responsive design viewports" style="max-width:100%;">
 
 [Racquets](https://racquet-shop.herokuapp.com/) is a fictional tennis racquet shop that allows tennis lovers to browse the racquets of past champions, with a wide variety of racquets available, from wood to metal, hybrid, graphite composite and modern frames. Many of the items on display are collectors items, and the website would appeal to both tennis enthusiasts and collectors alike.
 
