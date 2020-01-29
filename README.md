@@ -1,4 +1,6 @@
 # Racquets - a Django online tennis racquet shop
+<hr>
+<img src="static/images/responsive_views.png" alt="responsive design viewports" style="max-width:100%;">
 
 [Racquets](https://racquet-shop.herokuapp.com/) is a fictional tennis racquet shop that allows tennis lovers to browse the racquets of past champions, with a wide variety of racquets available, from wood to metal, hybrid, graphite composite and modern frames. Many of the items on display are collectors items, and the website would appeal to both tennis enthusiasts and collectors alike.
 
@@ -137,7 +139,7 @@ The user may start a search by clicking on the search icon in the navbar. This b
 ## Features to be implemented
 
 - Password reset: I would like to implement this useful feature for customers. It was not implemented due to time constraints.
-- Paypal payment: At present there is only credit card payment through Stripe available on the site. Many people enjoy the convenience of paypal.
+- Paypal payment: At present there is only credit card payment through Stripe available on the site. Many people enjoy the convenience of Paypal.
 - Dispatch email: Similar to password reset, this would be a very useful feature which would notify the customer when their product was dispatched.
 - Custom error pages: Django has very basic error pages for 404 and 500 errors for example. It would be nice to implement custom error pages with back links. 
 
@@ -155,6 +157,7 @@ The user may start a search by clicking on the search icon in the navbar. This b
 - [Balsamiq](https://balsamiq.com/) for mock ups of the site.
 - [Postgres](https://postgresql.org) for database functionality.
 - [Stripe](https://stripe.com/) for online payment processing.
+- [E-Modal](http://saribe.github.io/eModal/) for alert popup modals on contact page.
 - [Zondicons](https://www.zondicons.com/) for modern SVG icons.
   
 ## Resources
@@ -172,12 +175,75 @@ The user may start a search by clicking on the search icon in the navbar. This b
   
 ## Testing
 
-- Integrated tests were written in the individual apps to check the integrity and funtionality of the code.
 - The Django debugger was in constant use during development, in particular with the building of the backend functionality, routes and functions. Any errors or exceptions were investigated.
 - All possible user actions relating to forms for user authentication and payment were tested on the forms of each and every page, to ensure that the app was stable and did not crash.
 - The error pages such as 404 were tested to ensure they displayed correctly if an errant url was entered, or the server gave a 500 error.
 - Similarly all navigation links, back and forward buttons and submit and routing buttons were tested to ensure that everything was working as intended.
 - All user registration, login, authentication, cart, checkout and payment functionality were tested to ensure that all the required queries and actions were being perfomed on the database correctly.
+
+### Unit Testing
+
+- Unit tests were written in the individual apps to check the integrity and funtionality of the code. To run these tests, use the following command in the project root:
+
+`python manage.py test`
+
+### Functional Testing
+
+- An example functional test was written, based on material found in the [Testing Goat](https://www.obeythetestinggoat.com/book/chapter_02.html). This test can be found in the file functional_tests.py, in the project root. I found this ascpect of testing, using Selenium and Webdriver to activate functional browser site testing, very exciting. The original intention was to write more functional tests, but this was shelved due to time constraints.
+
+- To run this test on localhost, you need to have two terminal shells open in your project virtual environment folder:
+- In the first shell, type the following to run the Django server: 
+
+`python manage.py runserver`
+
+- In the second, type the following to run the functional tests:
+
+`python functional_tests.py`
+
+### Using the django shell for testing form and model functionality
+
+Many of the website operations involve the use of a form, to create, read, update and delete data in the database, such as register, login, products, orders etc. Whenever any of the subsequent features were tested, I opened a django shell with the following command:
+
+`python manage.py shell`
+
+This would allow me, via the command line, to query the items in the database and verify that, for example, after registration, a new user had been corectly added to the database during registration.
+
+### User Registration testing
+
+I added my new user details into the register form, the form validates and redirects to the login page with an alert message that you are registered, with a prompt to login. A subsequent sucessful login attempt confirmed that the registration action was a success. Incomplete, incorrect or missing form fields were rejected and the form would not validate.
+
+### User Login testing
+
+An attempt to login resulted in a success message with a redirect to the home page. Incomplete, incorrect or missing form fields were rejected and the form would not validate. Throughout the site I can complete all the actions for an authorized user, such as update my email and username, and add items to the shopping cart, checkout and pay for a product. Once logged in, the register and login navlinks were replaced by account and logout.
+
+### Account page testing
+
+Once logged in, a user will be presented with a navbar link to their account page, with the option to change their username and/or password. Both username and/or password can be changed sucessfully with a success message to confirm. Incomplete, incorrect or missing form fields were rejected and the form would not validate.
+
+### User logout testing
+
+Cliking on the navbar link to logout resulted in a success message alert that the user had been logged out. The register and login links were again present on the navbar, while the logout and account links were now no longer visible. The logout function was working as intended. 
+
+### Contact Form testing
+
+In the contact form, I added my name, email and message and hit the send button. A popup alert displays as intended, with the meessage that their email has been sent. I then checked my email to confirm that the message had been received sucessfully. Incomplete, incorrect or missing form fields were rejected and the form would not validate.
+
+### Search testing
+
+Clicking on the search icon in the navbar displayed the search page. Upon entering a search term in the searchbox, any sucessful results were displayed as product cards across the page. If there were no results returned, a default message would display telling the customer that no results were found.  
+
+### Cart testing
+
+- Only registered users can add items to the cart. As a non logged in user, I tried to add items to the cart and was not able. I was redirected to the login page and prompted to login. As a logged in user, I was easily able to add items to the cart, using the add to cart button found on product cards across the site. 
+- On the cart page itself, I was able to increment and decrement the quantity of each individual cart item as intended. The remove all button also worked correctly. The checkout button worked correctly and brought me to the checkout and payment page. 
+
+### Checkout and payment testing
+
+I was able to add my billing address and payment details on the checkout page. Incomplete, incorrect or missing form fields were rejected and the form would not validate. For Stripe test payments with the test API keys, I added the credit card number of 4242 4242 4242 4242, followed by the CVV code of 111. This worked as intended and I received a payment sucess alert message. I inputted an incorrect credit card number and an error message displayed as intended.
+
+### Payment confirmation testing
+
+A successful payment transaction redirected me to the payment confirmation page. The fullname entered on the form was displaying correctly on this page, along with the link for contact and the button to return to the shop at the bottom. Once payment is confirmed, I  confirmed that the user's cart was now empty.
 
 ### Further testing
 
@@ -188,10 +254,15 @@ The user may start a search by clicking on the search icon in the navbar. This b
 - The app was tested on [Responsinator](https://www.responsinator.com/) and [Am I Responsive](http://ami.responsivedesign.is/) to ensure that the site pages were rendering correctly on all types of devices and orientations, such as Ipad and Iphone.
 - The app was put through the [HTML5 Validator](https://validator.w3.org/) and some errors and warnings related to the Django templating language were flagged. Django templating language is not recognised so this is normal.
 - The app was put through the [CSS Validator](https://jigsaw.w3.org/css-validator/) and some errors were uncovered related to the Bootstrap css which is not something that I can control. My own css code was error free.
+- The javascript code used on the site was tested using [JSHint](https://jshint.com/). Some unecessary semi colons were highlighted and removed from the code.
 - I also tested the website on [google mobile friendly](https://search.google.com/test/mobile-friendly) and recieved a mobile friendly result. 
 - I tested the website on personal and other family devices such as my laptop and Android mobile phone, iPad and iPhone and Samsung Galaxy Tab in both potrait and landscape orientations.
 
 ## Bugs and known issues
+
+- On the cart page the user is able to increment and decrement individual cart item quantities using the plus and minus buttons. I realized that maybe the user had multiple cart items of a particular product and would like to remove them all at once. 
+
+- I then had to write an additional function and insert another button that would allow this. Hitting the minus button when the cart item quantity is 1 will delete that particular cart item completely from the cart. This might have unintended consequences for the user.
 
 ## Content credits
 
