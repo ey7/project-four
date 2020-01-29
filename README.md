@@ -206,7 +206,7 @@ Many of the website operations involve the use of a form, to create, read, updat
 
 `python manage.py shell`
 
-This would allow me, via the command line, to query the items in the database and verify that, for example, after registration, a new user had been corectly added to the database during registration.
+This would allow me, via the command line, to query the items in the database and verify that, for example, after registration, a new user had been correctly added to the database during registration.
 
 ### User Registration testing
 
@@ -260,6 +260,8 @@ A successful payment transaction redirected me to the payment confirmation page.
 
 ## Bugs and known issues
 
+- The use of Django's class based views such as ListView was very convenient for the display and pagination of the all racqquets pages. However they gave me some issues with the implementation of the search functionality, which was originally intented to be available on the all racqquets page. As a workaround, I decided to implement the search function as a standalone page which worked out well. 
+
 - On the cart page the user is able to increment and decrement individual cart item quantities using the plus and minus buttons. I realized that maybe the user had multiple cart items of a particular product and would like to remove them all at once. 
 
 - I then had to write an additional function and insert another button that would allow this. Hitting the minus button when the cart item quantity is 1 will delete that particular cart item completely from the cart. This might have unintended consequences for the user.
@@ -272,6 +274,17 @@ A successful payment transaction redirected me to the payment confirmation page.
 - No copyright infringement is intended as this is an educational project.
 
 ## Acknowledgements
+
+- The use of external code has been credited in the code. 
+- I also found the following resources very useful:
+
+- [Corey Schafer](https://www.youtube.com/user/schafer5) for his Django YouTube course.
+- [Pretty Printed](https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ) on all things Python and Django.
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django) Django course, in particular part 6 which explains class and list based views very well.
+- [William Vincent](https://wsvincent.com/django-slug-tutorial/) for his excellent tutorial on how to implement slugs in Django.
+- [Django Search](http://www.learningaboutelectronics.com/Articles/How-to-add-search-functionality-to-a-website-in-Django.php) on how to implement search in Django.
+- [William Vincent](https://wsvincent.com/django-models-best-practices/) on Django models best practices
+- [Obey the Testing Goat](https://www.obeythetestinggoat.com/) an excellent resource on testing and test driven development.
 
 ## Deployment
 
