@@ -33,7 +33,7 @@ $(document).ready(function () {
     };
 
 eModal.alert(success);
-    };
+    }
 
     function contact_error(){
         var error = {
@@ -43,6 +43,6 @@ eModal.alert(success);
     };
 
 eModal.alert(error);
-    };
+    }
 
-})
+});
