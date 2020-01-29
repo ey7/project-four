@@ -18,8 +18,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.get('http://localhost:8000')
 
         # test whether online shop is in the title
-        self.assertIn('Online shop', self.browser.title)  
-        self.fail('Finish the test!')  
-
+        self.assertIn('Racquets', self.browser.title)  
+          
 if __name__ == '__main__':  
     unittest.main()  
