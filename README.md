@@ -260,7 +260,7 @@ A successful payment transaction redirected me to the payment confirmation page.
 
 ## Bugs and known issues
 
-- The use of Django's class based views such as ListView was very convenient for the display and pagination of the all racqquets pages. However they gave me some issues with the implementation of the search functionality, which was originally intented to be available on the all racqquets page. As a workaround, I decided to implement the search function as a standalone page which worked out well. 
+- The use of Django's class based views such as ListView was very convenient for the display and pagination of the all racquets pages. However they gave me some issues with the implementation of the search functionality, which was originally intented to be available on the all racquets page. As a workaround, I decided to implement the search function as a standalone page which worked out well. 
 
 - On the cart page the user is able to increment and decrement individual cart item quantities using the plus and minus buttons. I realized that maybe the user had multiple cart items of a particular product and would like to remove them all at once. 
 
