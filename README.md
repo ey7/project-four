@@ -77,8 +77,10 @@ The app consists of over 10 pages relating to app functionality, such as home, a
 
 ### Navbar
 
-The navbar is displayed on all pages. When logged out, it displays links to home, shop, about, login, register, contact, search and cart. Only logged in users can add items to cart.
-When logged in, all navbar links are the same, except that login is replaced by an account link, and the register link is replaced by a logout link for the user to log out.
+The navbar is displayed on all pages. When logged out, it displays links to home, shop, about, login, register, contact, search and cart. Only logged in users can add items to cart. <hr>
+<img src="static/img/loggedOut.png" alt="logged out navbar" style="max-width:100%;">
+When logged in, all navbar links are the same, except that login is replaced by an account link, and the register link is replaced by a logout link for the user to log out. <hr>
+<img src="static/img/loggedIn.png" alt="logged in navbar" style="max-width:100%;">
 
 ### Home page
 
@@ -90,15 +92,20 @@ The shop link in the navbar provides a dropdown of options, from all racquets to
 
 ### Product list or all racquets pages
 
-The product list pages display all shop products through the use of cards with images, links and price, paginated by 6 per page. On each product is an add to cart buttton, which will add the product to the user's card, but only if they are logged in. There are numbered buttons and next and previous buttons to allow the user to browse the various product pages.
+The product list pages display all shop products through the use of cards with images, links and price, paginated by 6 per page. On each product is an add to cart buttton, which will add the product to the user's card, but only if they are logged in. There are numbered buttons and next and previous buttons to allow the user to browse the various product pages.<br>
+<img src="static/img/prouctCards.png" alt="product cards" style="max-width:100%;">
 
 ### Product detail or individual product pages
 
-If a user clicks on the title on any product card, it acts as a link to the individual product detail page which has a more detailed description of the product on offer. An add to cart button on the product card entices the user to add the item to their cart.
+If a user clicks on the title on any product card, it acts as a link to the individual product detail page which has a more detailed description of the product on offer. An add to cart button on the product card entices the user to add the item to their cart.<br>
+<img src="static/img/productDetail.png" alt="product detail" style="max-width:100%;">
 
 ### Cart 
 
-When a user is logged in and hits an add to cart button on any item, the item will be added to their cart. If the cart is not empty, a badge will display beside the cart icon in the navbar, displaying the product count and number of items in their cart. Clicking the cart button in the navbar will bring the user to their cart page. If not logged in, they will be redirected to the login page. If logged in, the users cart items will be displayed as product cards. <br> On each cart item card, there will be three buttons to modify the cart. A plus button allows the user to increment the quantity for that particular item. A minus button will decrement the quantity. A third button on each cart item will allow the user to remove all of that particular item from the cart. On each cart item will be badges displaying clearly the quantity. A cart product total and total price will display underneath, along with a checkout button. 
+- When a user is logged in and hits an add to cart button on any item, the item will be added to their cart. If the cart is not empty, a badge will display beside the cart icon in the navbar, displaying the product count and number of items in their cart. Clicking the cart button in the navbar will bring the user to their cart page. If not logged in, they will be redirected to the login page. If logged in, the users cart items will be displayed as product cards. <br>
+<img src="static/img/cartItems.png" alt=" cart items" style="max-width:100%;">
+
+- On each cart item card, there will be three buttons to modify the cart. A plus button allows the user to increment the quantity for that particular item. A minus button will decrement the quantity. A third button on each cart item will allow the user to remove all of that particular item from the cart. On each cart item will be badges displaying clearly the quantity. A cart product total and total price will display underneath, along with a checkout button. 
 
 ### Checkout
 
@@ -106,7 +113,8 @@ The checkout page will display any cart items for checkout at the top of the pag
 
 ### Payment confirmation
 
-This page will appear after a sucessful payment transaction, and will tell the user that their payment was sucessful. The user will be thanked for shopping with the website, and a link to the shop and contact page is available.
+This page will appear after a sucessful payment transaction, and will tell the user that their payment was sucessful. The user will be thanked for shopping with the website, and a link to the shop and contact page is available.<br>
+<img src="static/img/paymentConfirmation.png" alt="payment confirmation" style="max-width:100%;">
 
 ### Register
 
@@ -134,7 +142,8 @@ A contact page gives the user the ability to send a message to the shop owner. T
 
 ### Search
 
-The user may start a search by clicking on the search icon in the navbar. This brings up the search page with a search box at the top. The search operates by searching on title and category fields in the products database and will return matches in the form of product cards with images and links. The links will bring the user to the individual product detail page where more information is available.
+The user may start a search by clicking on the search icon in the navbar. This brings up the search page with a search box at the top. The search operates by searching on title and category fields in the products database and will return matches in the form of product cards with images and links. The links will bring the user to the individual product detail page where more information is available. <br>
+<img src="static/img/productSearch.png" alt="product search" style="max-width:100%;">
 
 ## Features to be implemented
 
@@ -260,7 +269,7 @@ A successful payment transaction redirected me to the payment confirmation page.
 
 ## Bugs and known issues
 
-- The use of Django's class based views such as ListView was very convenient for the display and pagination of the all racquets pages. However they gave me some issues with the implementation of the search functionality, which was originally intented to be available on the all racquets page. As a workaround, I decided to implement the search function as a standalone page which worked out well. 
+- The use of Django's class based views such as ListView was very convenient for the display and pagination of the all racquets pages. However it gave me some issues with the implementation of the search functionality, which was originally intented to be available on the all racquets page. As a workaround, I decided to implement the search function as a standalone page which worked out well. 
 
 - On the cart page the user is able to increment and decrement individual cart item quantities using the plus and minus buttons. I realized that maybe the user had multiple cart items of a particular product and would like to remove them all at once. 
 
