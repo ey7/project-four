@@ -30,9 +30,10 @@ h2 {
     font-size: 1.1rem;
 }
 
-/* keeps carosuel image at 100%*/
+/* code credit: https://bootstrapcreative.com/pattern/full-width-carousel-responsive-images*/
+/* keeps carousel image at 100% width and height auto*/
 .carousel-item .img-fluid {
-    width:100%;
+    width: 100%;
 }
 
 /* home page carousel image size*/
