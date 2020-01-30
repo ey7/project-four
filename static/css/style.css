@@ -30,6 +30,16 @@ h2 {
     font-size: 1.1rem;
 }
 
+/* keeps carosuel image at 100%*/
+.carousel-item .img-fluid {
+    width:100%;
+}
+
+/* home page carousel image size*/
+.carousel-image {
+    height: 100%;
+}
+
 /* card-title styling */
 .card-image {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
