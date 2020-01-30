@@ -3,6 +3,7 @@
 <img src="static/img/responsive_views.png" alt="responsive design viewports" style="max-width:100%;">
 
 [Racquets](https://racquet-shop.herokuapp.com/) is a fictional tennis racquet shop that allows tennis lovers to browse the racquets of past champions, with a wide variety of racquets available, from wood to metal, hybrid, graphite composite and modern frames. Many of the items on display are collectors items, and the website would appeal to both tennis enthusiasts and collectors alike.
+- Please note the **second contributor** to the project is the unintended consequence of the acceptance of an automated pull request from the Github Dependabot to upgrade the Django version that was initially used. Please refer to the commit history for more details. There is only 1 contributor.
 
 # Table of Contents
 
@@ -35,7 +36,7 @@ The wireframes for the project, created with [Balsamiq](https://balsamiq.com/), 
 
 ### Project Design Summary
 
-- The app will be a fully functional django powered online vintage tennis racquet shop. Users will have the chance to register for a seamlesss shopping experience.
+- The app will be a fully functional django powered online vintage tennis racquet shop. Users will have the chance to register for a seamless shopping experience.
 - Products will be displayed as attractive cards with interesting descriptive content on the product pages.
 - Users can add items to their cart as they browse the site.
 - The app will have a shopping cart page, where users can view the items in their cart.
@@ -93,7 +94,7 @@ The shop link in the navbar provides a dropdown of options, from all racquets to
 ### Product list or all racquets pages
 
 The product list pages display all shop products through the use of cards with images, links and price, paginated by 6 per page. On each product is an add to cart buttton, which will add the product to the user's card, but only if they are logged in. There are numbered buttons and next and previous buttons to allow the user to browse the various product pages.<br>
-<img src="static/img/prouctCards.png" alt="product cards" style="max-width:100%;">
+<img src="static/img/productCards.png" alt="product cards" style="max-width:100%;">
 
 ### Product detail or individual product pages
 
@@ -158,16 +159,20 @@ The user may start a search by clicking on the search icon in the navbar. This b
 - [Bootstrap](https://getbootstrap.com/) for modern styling with responsive navigation, forms and buttons. 
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/javascript) for site functionality.
 - [Jquery](https://jquery.com/) and [Popper Js](https://popper.js.org/) for Bootstrap functionality.
+- [Django](https://www.djangoproject.com/) Python framework for web development.
+- [Python](https://www.python.org/) as the programming language behind Django.
 - [Google fonts](https://fonts.google.com/) for fast loading of modern fonts.
-- Git for version control and [Github](https://github.com/) for repository hosting.
+- [Git](https://git-scm.com/) for version control and [Github](https://github.com/) for repository hosting.
 - [EmailJS](https://www.emailjs.com/) for transfer of emails from contact form to personal email.
 - [Cloudinary](https://www.cloudinary.com/) to host uploaded images for products.
 - [Heroku](https://heroku.com/) to host the site.
 - [Balsamiq](https://balsamiq.com/) for mock ups of the site.
-- [Postgres](https://postgresql.org) for database functionality.
+- [SqLite](https://www.sqlite.org/index.html) as a development database.
+- [Postgres](https://postgresql.org) as a production database.
 - [Stripe](https://stripe.com/) for online payment processing.
 - [E-Modal](http://saribe.github.io/eModal/) for alert popup modals on contact page.
 - [Zondicons](https://www.zondicons.com/) for modern SVG icons.
+- [Whitenoise](http://whitenoise.evans.io/en/stable/) so the web app can serve static files on Heroku.
   
 ## Resources
 
@@ -180,7 +185,7 @@ The user may start a search by clicking on the search icon in the navbar. This b
 - [YouTube](https://www.youtube.com)
 - [Responsinator](https://www.responsinator.com/)
 - [Am I Responsive](http://ami.responsivedesign.is/)
-- Google
+- [Google](https://www.google.com)
   
 ## Testing
 
@@ -268,6 +273,8 @@ A successful payment transaction redirected me to the payment confirmation page.
 - I tested the website on personal and other family devices such as my laptop and Android mobile phone, iPad and iPhone and Samsung Galaxy Tab in both potrait and landscape orientations.
 
 ## Bugs and known issues
+
+- Please note the **second contributor** to the project is the unintended consequence of the acceptance of an automated pull request from the Github Dependabot to upgrade the Django version that was intially used. Please refer to the commit history for more details. There is only 1 contributor.
 
 - The use of Django's class based views such as ListView was very convenient for the display and pagination of the all racquets pages. However it gave me some issues with the implementation of the search functionality, which was originally intented to be available on the all racquets page. As a workaround, I decided to implement the search function as a standalone page which worked out well. 
 
