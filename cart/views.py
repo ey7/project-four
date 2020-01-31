@@ -25,7 +25,7 @@ def add_to_cart(request, id):
 def add_product_to_cart(request, id):
 	# adds selected product to the cart
 	
-	if not request.user.is_authenticated:
+	if request.method == 'GET':
 		return redirect(reverse('login'))
 
 		if request.method == 'POST':
