@@ -25,14 +25,15 @@ def add_to_cart(request, id):
 def add_product_to_cart(request, id):
 	# adds selected product to the cart
 	
-	if request.method == 'POST':
-		id = request.POST.get('id')
-		cart = request.session.get('cart', {})
-		cart[id] = cart.get(id, 0) + 1
-		request.session['cart'] = cart
-		messages.info(request, f'Product added to cart')
+	if request.user.is_authenticated:
+		if request.method == 'POST':
+			id = request.POST.get('id')
+			cart = request.session.get('cart', {})
+			cart[id] = cart.get(id, 0) + 1
+			request.session['cart'] = cart
+			messages.info(request, f'Product added to cart')
 
-		return redirect(reverse('products:all-products'))
+			return redirect(reverse('products:all-products'))
 
 # function to decrement cart items on cart page
 @login_required
