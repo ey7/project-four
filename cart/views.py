@@ -5,7 +5,9 @@ from django.conf import settings
 
 @login_required
 def cart_view(request):
-
+	if not request.user.is_authenticated:
+		messages.danger(request, f'You must be logged in to view the cart')
+		
 	return render(request, 'cart/cart_view.html')
 
 # function to increment cart items on cart page
