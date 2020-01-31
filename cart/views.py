@@ -9,7 +9,7 @@ def cart_view(request):
 # function to increment cart items on cart page
 @login_required
 def add_to_cart(request, id):
-	# adds one product to the cart
+	# increments product count of 1 product name in the cart
 	
 	if request.method == 'POST':
 		id = request.POST.get('id')
@@ -19,18 +19,19 @@ def add_to_cart(request, id):
 
 		return render(request,'cart/cart_view.html')
 		
-# function to add product to cart on product and search pages
+# function to add product to cart on products and search pages
 @login_required
 def add_product_to_cart(request, id):
-	# adds one product to the cart
+	# adds selected product to the cart
 	
-	if request.method == 'POST':
-		id = request.POST.get('id')
-		cart = request.session.get('cart', {})
-		cart[id] = cart.get(id, 0) + 1
-		request.session['cart'] = cart
+	if request.user.is_authenticated():
+		if request.method == 'POST':
+			id = request.POST.get('id')
+			cart = request.session.get('cart', {})
+			cart[id] = cart.get(id, 0) + 1
+			request.session['cart'] = cart
 
-		return redirect(reverse('products:all-products'))
+			return redirect(reverse('products:all-products'))
 
 # function to decrement cart items on cart page
 @login_required
