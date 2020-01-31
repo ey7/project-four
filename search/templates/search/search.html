@@ -41,7 +41,7 @@
 	                </a>
 	                <p class="card-text">€{{result.price.normalize}}</p>
 	                	<!-- add to cart button -->
-		                <form method="post" action="{% url 'add-to-cart' result.id %}">
+		                <form method="post" action="{% url 'add-product-to-cart' result.id %}">
 		                  {% csrf_token %}
 		                   <input type="hidden" name="quantity" value="1">
 		                   <input type="hidden" name="id" value ="{{result.id}}">

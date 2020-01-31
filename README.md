@@ -274,7 +274,7 @@ A successful payment transaction redirected me to the payment confirmation page.
 
 ## Bugs and known issues
 
-- Please note the **second contributor** to the project is the unintended consequence of the acceptance of an automated pull request from the Github Dependabot to upgrade the Django version that was intially used. Please refer to the commit history for more details. There is only 1 contributor.
+- **Please note the second contributor to the project is the unintended consequence of the acceptance of an automated pull request from the Github Dependabot to upgrade the Django version that was intially used. Please refer to the commit history for more details. There is only 1 contributor.**
 
 - The use of Django's class based views such as ListView was very convenient for the display and pagination of the all racquets pages. However it gave me some issues with the implementation of the search functionality, which was originally intented to be available on the all racquets page. As a workaround, I decided to implement the search function as a standalone page which worked out well. 
 
