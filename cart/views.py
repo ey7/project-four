@@ -22,7 +22,6 @@ def add_to_cart(request, id):
 		return render(request,'cart/cart_view.html')
 		
 # function to add product to cart on products and search pages
-@login_required
 def add_product_to_cart(request, id):
 	# adds selected product to the cart
 	# code credit: https://docs.djangoproject.com/en/2.2/topics/auth/default/
