@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.conf import settings
 
 @login_required
 def cart_view(request):
@@ -24,9 +25,9 @@ def add_to_cart(request, id):
 @login_required
 def add_product_to_cart(request, id):
 	# adds selected product to the cart
-	
-	if request.method == 'GET':
-		return redirect(reverse('login'))
+	# code credit: https://docs.djangoproject.com/en/2.2/topics/auth/default/
+	if not request.user.is_authenticated:
+		return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
 
 		if request.method == 'POST':
 			id = request.POST.get('id')
