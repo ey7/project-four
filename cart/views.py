@@ -22,21 +22,18 @@ def add_to_cart(request, id):
 		return render(request,'cart/cart_view.html')
 		
 # function to add product to cart on products and search pages
-@login_required
+@login_required(redirect_field_name=None)
 def add_product_to_cart(request, id):
 	# adds selected product to the cart
-	# code credit: https://docs.djangoproject.com/en/2.2/topics/auth/default/
-	if not request.user.is_authenticated:
-		return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+	
+	if request.method == 'POST':
+		id = request.POST.get('id')
+		cart = request.session.get('cart', {})
+		cart[id] = cart.get(id, 0) + 1
+		request.session['cart'] = cart
+		messages.info(request, f'Product added to cart')
 
-		if request.method == 'POST':
-			id = request.POST.get('id')
-			cart = request.session.get('cart', {})
-			cart[id] = cart.get(id, 0) + 1
-			request.session['cart'] = cart
-			messages.info(request, f'Product added to cart')
-
-			return redirect(reverse('products:all-products'))
+		return redirect(reverse('products:all-products'))
 
 # function to decrement cart items on cart page
 @login_required
