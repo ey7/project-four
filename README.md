@@ -276,9 +276,11 @@ A successful payment transaction redirected me to the payment confirmation page.
 
 - **Please note the second contributor to the project is the unintended consequence of the acceptance of an automated pull request from the Github Dependabot to upgrade the Django version that was intially used. Please refer to the commit history for more details. There is only 1 contributor.**
 
+- I had an issue with the login required decorator which was attached to the add product to cart function where the next parameter witin the url was redirecting to a page that didn't exist, and this was causing an error on sucessful authentication. After some trial and error I figured out that I could set the redirect_field_name=None within the login required decorator, and the bug was resolved.
+
 - The use of Django's class based views such as ListView was very convenient for the display and pagination of the all racquets pages. However it gave me some issues with the implementation of the search functionality, which was originally intented to be available on the all racquets page. As a workaround, I decided to implement the search function as a standalone page which worked out well. 
 
-- On the cart page the user is able to increment and decrement individual cart item quantities using the plus and minus buttons. I realized that maybe the user had multiple cart items of a particular product and would like to remove them all at once. 
+- On the cart page the user is able to increment and decrement individual cart item quantities using the plus and minus buttons. I then realized that maybe the user had multiple cart items of a particular product and would like to remove them all at once. 
 
 - I then had to write an additional function and insert another button that would allow this. Hitting the minus button when the cart item quantity is 1 will delete that particular cart item completely from the cart. This might have unintended consequences for the user.
 
