@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['racquet-shop.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -162,4 +162,3 @@ EMAILJS_ID = os.getenv('EMAILJS_ID')
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
-django_heroku.settings(locals())
