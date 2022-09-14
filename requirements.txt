@@ -9,13 +9,9 @@ django-storages==1.8
 gunicorn==20.0.4
 idna==2.8
 mock==3.0.5
-<<<<<<< HEAD
 Pillow==9.0.0
 psycopg2==2.8.4
-=======
 Pillow==9.0.1
-psycopg2-binary==2.9.3
->>>>>>> 01ff57f666bdc47bbc404e6cd3a4a89717cfd5c4
 pytz==2019.3
 requests==2.22.0
 selenium==3.141.0
