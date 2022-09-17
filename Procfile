@@ -1,1 +1,1 @@
-web: gunicorn shopper.wsgi --log-file -
+web: python manage.py migrate && gunicorn shopper.wsgi
