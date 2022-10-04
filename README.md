@@ -3,7 +3,6 @@
 <img src="static/img/responsive_views.png" alt="responsive design viewports" style="max-width:100%;">
 
 [Racquets](https://web-production-84b6.up.railway.app/) is the fourth milestone project for the Code Institute Full Stack Software Development Diploma. It is a fictional tennis racquet shop that allows tennis lovers to browse the racquets of past champions, with a wide variety of racquets available, from wood to metal, hybrid, graphite composite and modern frames. Many of the items on display are collectors items, and the website would appeal to both tennis enthusiasts and collectors alike.
-- Please note the **second contributor** to the project is the unintended consequence of the acceptance of an automated pull request from the Github Dependabot to upgrade the Django version that was initially used. Please refer to the commit history for more details. There is only 1 contributor.
 
 # Table of Contents
 
