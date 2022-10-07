@@ -46,8 +46,7 @@ INSTALLED_APPS = [
     'search',
     'checkout',
     'crispy_forms',
-    'cloudinary',
-    'cloudinary_storage',
+    'storages',
 ]
 
 MIDDLEWARE = [
