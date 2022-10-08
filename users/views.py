@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from . forms import UsernameEmailPasswordForm, EmailUsernameUpdate, AvatarUploadForm 
+from . forms import UsernameEmailPasswordForm, EmailUsernameUpdate
 
 def register(request):
 	"""
@@ -39,19 +39,6 @@ def account(request):
 
 	return render(request, 'users/account.html', {'form': form})
 
-@login_required
-def avatar_upload(request):
-	user = request.user
-	instance = get_object_or_404(UserProfile, user=user)
-	if request.method == 'POST':
-		form = AvatarUploadForm(request.POST, request.FILES,
-			instance=instance)
-		if form.is_valid():
-			form.save()
-			return redirect('/')
-	form = AvatarUploadForm()
-
-	return render(request, 'users/account.html', {'form': form})
 
 
 
